@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Infaq Digital - Mushola Annur</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body { font-family: sans-serif; }
+</style>
+</head>
+
+<body class="bg-slate-100 p-6">
+
+<div class="max-w-5xl mx-auto space-y-6">
+
+<!-- HEADER -->
+<div class="bg-green-800 text-white p-6 rounded-2xl shadow">
+<h1 class="text-2xl font-bold">MUSHOLA ANNUR</h1>
+<p class="text-sm">Laporan Infaq Digital</p>
+<p id="current-date" class="text-xs mt-2"></p>
+</div>
+
+<!-- SALDO -->
+<div class="bg-white p-6 rounded-2xl shadow text-center">
+<p class="text-xs text-gray-500">SALDO SAAT INI</p>
+<h2 id="total-balance" class="text-4xl font-bold">Rp 0</h2>
+</div>
+
+<!-- TOTAL -->
+<div class="grid md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl shadow">
+<p class="text-xs text-gray-400">TOTAL MASUK</p>
+<p id="total-in" class="text-2xl font-bold text-green-600">Rp 0</p>
+</div>
+
+<div class="bg-white p-4 rounded-xl shadow">
+<p class="text-xs text-gray-400">TOTAL KELUAR</p>
+<p id="total-out" class="text-2xl font-bold text-red-500">Rp 0</p>
+</div>
+</div>
+
+<!-- TABLE -->
+<div class="bg-white rounded-2xl shadow overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-gray-100 text-gray-500 text-xs">
+<tr>
+<th class="p-3 text-left">TGL</th>
+<th class="p-3 text-left">KETERANGAN</th>
+<th class="p-3 text-right">MASUK</th>
+<th class="p-3 text-right">KELUAR</th>
+</tr>
+</thead>
+<tbody id="table-body"></tbody>
+</table>
+</div>
+
+<!-- REKAP BULANAN -->
+<div class="bg-white p-6 rounded-2xl shadow space-y-4">
+<h3 class="text-sm font-bold text-gray-500">REKAP BULANAN</h3>
+<div id="rekap-bulanan" class="grid md:grid-cols-3 gap-4"></div>
+<canvas id="chartBulanan"></canvas>
+</div>
+
+</div>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbwEP4pWen5Qmmd7KLKaWsFtvTH_84TNJ526w6RNvPJVY31kP7zSd5YfjoVidYzBiPrzmA/exec";
+
+let transactions = [];
+let chart;
+
+const formatCurrency = (val) =>
+new Intl.NumberFormat("id-ID", {
+style: "currency",
+currency: "IDR",
+minimumFractionDigits: 0
+}).format(val);
+
+async function loadData() {
+try {
+const res = await fetch(API_URL);
+const data = await res.json();
+transactions = data;
+render();
+} catch (err) {
+console.error("Gagal load data");
+}
+}
+
+function render() {
+const body = document.getElementById("table-body");
+body.innerHTML = "";
+
+let tIn = 0;
+let tOut = 0;
+let monthly = {};
+
+transactions.forEach(t => {
+const masuk = Number(t.MASUK) || 0;
+const keluar = Number(t.KELUAR) || 0;
+
+tIn += masuk;
+tOut += keluar;
+
+const bulan = t.TGL ? t.TGL.substring(0,7) : "Unknown";
+
+if (!monthly[bulan]) {
+monthly[bulan] = { masuk:0, keluar:0 };
+}
+
+monthly[bulan].masuk += masuk;
+monthly[bulan].keluar += keluar;
+
+body.innerHTML += `
+<tr class="border-t">
+<td class="p-3">${t.TGL || "-"}</td>
+<td class="p-3 font-semibold">${t.KETERANGAN || "-"}</td>
+<td class="p-3 text-right text-green-600">${masuk ? formatCurrency(masuk) : "-"}</td>
+<td class="p-3 text-right text-red-500">${keluar ? formatCurrency(keluar) : "-"}</td>
+</tr>
+`;
+});
+
+document.getElementById("total-in").innerText = formatCurrency(tIn);
+document.getElementById("total-out").innerText = formatCurrency(tOut);
+document.getElementById("total-balance").innerText = formatCurrency(tIn - tOut);
+
+renderRekap(monthly);
+renderChart(monthly);
+}
+
+function renderRekap(monthly) {
+const container = document.getElementById("rekap-bulanan");
+container.innerHTML = "";
+
+Object.keys(monthly).sort().forEach(bulan => {
+const data = monthly[bulan];
+const saldo = data.masuk - data.keluar;
+
+container.innerHTML += `
+<div class="bg-gray-50 p-4 rounded-lg">
+<p class="text-xs font-bold">${bulan}</p>
+<p class="text-green-600 text-sm">Masuk: ${formatCurrency(data.masuk)}</p>
+<p class="text-red-500 text-sm">Keluar: ${formatCurrency(data.keluar)}</p>
+<p class="font-bold text-sm">Saldo: ${formatCurrency(saldo)}</p>
+</div>
+`;
+});
+}
+
+function renderChart(monthly) {
+const ctx = document.getElementById("chartBulanan");
+
+const labels = Object.keys(monthly).sort();
+const dataMasuk = labels.map(b => monthly[b].masuk);
+const dataKeluar = labels.map(b => monthly[b].keluar);
+
+if (chart) chart.destroy();
+
+chart = new Chart(ctx, {
+type: "bar",
+data: {
+labels: labels,
+datasets: [
+{
+label: "Masuk",
+data: dataMasuk,
+backgroundColor: "#16a34a"
+},
+{
+label: "Keluar",
+data: dataKeluar,
+backgroundColor: "#dc2626"
+}
+]
+}
+});
+}
+
+document.getElementById("current-date").innerText =
+new Date().toLocaleDateString("id-ID", {
+day: "numeric",
+month: "long",
+year: "numeric"
+});
+
+loadData();
+setInterval(loadData, 10000);
+</script>
+
+</body>
+</html>
