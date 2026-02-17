@@ -3,195 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan Infaq Digital - Mushola Annur</title>
+<title>Laporan Infaq Digital - Musholla Wakaf Annur</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-body { font-family: sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+body { font-family: 'Inter', sans-serif; background:#f8fafc; color:#0f172a; }
+.gradient-blue { background: linear-gradient(135deg,#3b82f6 0%,#2563eb 100%); }
+.shadow-custom { box-shadow:0 10px 30px -5px rgba(0,0,0,0.05);}
+
+/* Struktur Takmir */
+.struktur-box{
+border:2px solid #166534;
+padding:10px;
+border-radius:12px;
+background:white;
+min-width:180px;
+font-size:12px;
+font-weight:700;
+}
 </style>
 </head>
 
-<body class="bg-slate-100 p-6">
+<body class="p-4 md:p-6 lg:p-8 bg-[#f8fafc]">
 
-<div class="max-w-5xl mx-auto space-y-6">
+<div class="max-w-7xl mx-auto space-y-6">
 
-<!-- HEADER -->
-<div class="bg-green-800 text-white p-6 rounded-2xl shadow">
-<h1 class="text-2xl font-bold">MUSHOLA ANNUR</h1>
-<p class="text-sm">Laporan Infaq Digital</p>
-<p id="current-date" class="text-xs mt-2"></p>
+<header class="bg-[#166534] text-white p-6 rounded-[1.5rem] flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-lg border-b-4 border-[#14532d]">
+<div>
+<h1 class="font-black text-xl uppercase">Musholla Wakaf Annur</h1>
+<p class="text-xs text-[#4ade80] font-black uppercase tracking-widest">Laporan Infaq Digital System</p>
 </div>
-
-<!-- SALDO -->
-<div class="bg-white p-6 rounded-2xl shadow text-center">
-<p class="text-xs text-gray-500">SALDO SAAT INI</p>
-<h2 id="total-balance" class="text-4xl font-bold">Rp 0</h2>
+<div class="bg-[#14532d] px-4 py-2 rounded-xl md:rounded-full text-[10px] md:text-xs font-black uppercase leading-relaxed">
+<span>ALAMAT : JL. KADEMANGAN 1, RT 08 RW O4, BAKALAN LOR</span>
 </div>
+</header>
 
-<!-- TOTAL -->
-<div class="grid md:grid-cols-2 gap-4">
-<div class="bg-white p-4 rounded-xl shadow">
-<p class="text-xs text-gray-400">TOTAL MASUK</p>
-<p id="total-in" class="text-2xl font-bold text-green-600">Rp 0</p>
-</div>
+<!-- ================= STRUKTUR TAKMIR ================= -->
+<div class="bg-white p-8 rounded-[2rem] shadow-custom text-center">
+<h2 class="font-black text-xl uppercase text-[#166534] mb-6">Struktur Takmir</h2>
 
-<div class="bg-white p-4 rounded-xl shadow">
-<p class="text-xs text-gray-400">TOTAL KELUAR</p>
-<p id="total-out" class="text-2xl font-bold text-red-500">Rp 0</p>
+<div class="flex justify-center flex-wrap gap-6 mb-6">
+<div class="struktur-box">
+Ketua<br>Bpk Purnomo
 </div>
 </div>
 
-<!-- TABLE -->
-<div class="bg-white rounded-2xl shadow overflow-x-auto">
-<table class="w-full text-sm">
-<thead class="bg-gray-100 text-gray-500 text-xs">
+<div class="flex justify-center flex-wrap gap-6 mb-6">
+<div class="struktur-box">
+Wakil Ketua<br>Bpk Anton
+</div>
+
+<div class="struktur-box">
+Penasehat<br>
+Bpk Mualif<br>
+Bpk Rokim, Mukarom<br>
+Bpk Fafa (Mas Wo)
+</div>
+</div>
+
+<div class="flex justify-center flex-wrap gap-6 mb-6">
+<div class="struktur-box">
+Sekretaris<br>Wakil Sekretaris
+</div>
+</div>
+
+<div class="flex justify-center flex-wrap gap-6 mb-6">
+<div class="struktur-box">
+Bendahara 1<br>Bpk Budi
+</div>
+
+<div class="struktur-box">
+Bendahara 2<br>Mb Ratna
+</div>
+</div>
+
+<div class="flex justify-center flex-wrap gap-4">
+<div class="struktur-box">
+Seksi Keamanan<br>
+Bpk Heru Prasetyo<br>
+Bpk Puguh
+</div>
+
+<div class="struktur-box">
+Seksi Perawatan<br>
+Bpk Ipin<br>
+Bpk Wiodado
+</div>
+
+<div class="struktur-box">
+Seksi Kegiatan<br>
+Bpk Yatiran<br>
+Kardiyo<br>
+Mb Maya
+</div>
+
+<div class="struktur-box">
+Seksi Kebersihan<br>
+Bpk Dwiyani<br>
+Bpk Sutikno<br>
+Mb Nurul
+</div>
+</div>
+
+</div>
+<!-- ================= END STRUKTUR ================= -->
+
+
+<!-- ================= SALDO INFAQ ================= -->
+
+<div class="gradient-blue p-10 rounded-[2.5rem] text-white text-center shadow-2xl">
+<p class="text-xs font-black uppercase tracking-widest">Saldo Infaq Saat Ini</p>
+<h2 class="text-5xl font-black tracking-tighter" id="totalBalance">Rp 0</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#10b981] shadow-custom">
+<p class="text-xs font-black text-gray-400 uppercase tracking-widest">Total Pemasukan</p>
+<p class="text-3xl font-black text-[#10b981]" id="totalIncome">Rp 0</p>
+</div>
+
+<div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#ef4444] shadow-custom">
+<p class="text-xs font-black text-gray-400 uppercase tracking-widest">Total Pengeluaran</p>
+<p class="text-3xl font-black text-[#ef4444]" id="totalExpense">Rp 0</p>
+</div>
+</div>
+
+<!-- ================= TABEL MUTASI ================= -->
+
+<div class="bg-white p-10 rounded-[2.5rem] shadow-custom">
+<h3 class="font-black text-xl uppercase tracking-widest text-[#166534] mb-6">Laporan Mutasi Infaq</h3>
+
+<div class="overflow-x-auto">
+<table class="w-full text-left min-w-[800px]">
+<thead class="text-xs font-black text-gray-400 uppercase tracking-widest border-b-4 border-gray-50">
 <tr>
-<th class="p-3 text-left">TGL</th>
-<th class="p-3 text-left">KETERANGAN</th>
-<th class="p-3 text-right">MASUK</th>
-<th class="p-3 text-right">KELUAR</th>
+<th class="pb-4">TGL</th>
+<th class="pb-4">KETERANGAN</th>
+<th class="pb-4 text-right">MASUK</th>
+<th class="pb-4 text-right">KELUAR</th>
 </tr>
 </thead>
-<tbody id="table-body"></tbody>
+
+<tbody id="transactionList">
+<!-- (ISI TABEL TETAP SAMA SEPERTI PUNYA ANDA) -->
+</tbody>
 </table>
 </div>
-
-<!-- REKAP BULANAN -->
-<div class="bg-white p-6 rounded-2xl shadow space-y-4">
-<h3 class="text-sm font-bold text-gray-500">REKAP BULANAN</h3>
-<div id="rekap-bulanan" class="grid md:grid-cols-3 gap-4"></div>
-<canvas id="chartBulanan"></canvas>
 </div>
 
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbwEP4pWen5Qmmd7KLKaWsFtvTH_84TNJ526w6RNvPJVY31kP7zSd5YfjoVidYzBiPrzmA/exec";
-
-let transactions = [];
-let chart;
-
-const formatCurrency = (val) =>
-new Intl.NumberFormat("id-ID", {
-style: "currency",
-currency: "IDR",
-minimumFractionDigits: 0
-}).format(val);
-
-async function loadData() {
-try {
-const res = await fetch(API_URL);
-const data = await res.json();
-transactions = data;
-render();
-} catch (err) {
-console.error("Gagal load data");
-}
+function parseRupiah(text) {
+  return parseInt(text.replace(/[^0-9]/g, '')) || 0;
 }
 
-function render() {
-const body = document.getElementById("table-body");
-body.innerHTML = "";
-
-let tIn = 0;
-let tOut = 0;
-let monthly = {};
-
-transactions.forEach(t => {
-const masuk = Number(t.MASUK) || 0;
-const keluar = Number(t.KELUAR) || 0;
-
-tIn += masuk;
-tOut += keluar;
-
-const bulan = t.TGL ? t.TGL.substring(0,7) : "Unknown";
-
-if (!monthly[bulan]) {
-monthly[bulan] = { masuk:0, keluar:0 };
+function formatRupiah(num) {
+  return "Rp " + num.toLocaleString("id-ID");
 }
 
-monthly[bulan].masuk += masuk;
-monthly[bulan].keluar += keluar;
+function calculateTotals() {
+  let totalIncome = 0;
+  let totalExpense = 0;
 
-body.innerHTML += `
-<tr class="border-t">
-<td class="p-3">${t.TGL || "-"}</td>
-<td class="p-3 font-semibold">${t.KETERANGAN || "-"}</td>
-<td class="p-3 text-right text-green-600">${masuk ? formatCurrency(masuk) : "-"}</td>
-<td class="p-3 text-right text-red-500">${keluar ? formatCurrency(keluar) : "-"}</td>
-</tr>
-`;
-});
+  document.querySelectorAll("#transactionList tr").forEach(row => {
+    const masuk = row.children[2].innerText;
+    const keluar = row.children[3].innerText;
 
-document.getElementById("total-in").innerText = formatCurrency(tIn);
-document.getElementById("total-out").innerText = formatCurrency(tOut);
-document.getElementById("total-balance").innerText = formatCurrency(tIn - tOut);
+    totalIncome += parseRupiah(masuk);
+    totalExpense += parseRupiah(keluar);
+  });
 
-renderRekap(monthly);
-renderChart(monthly);
+  const balance = totalIncome - totalExpense;
+
+  document.getElementById("totalIncome").innerText = formatRupiah(totalIncome);
+  document.getElementById("totalExpense").innerText = formatRupiah(totalExpense);
+  document.getElementById("totalBalance").innerText = formatRupiah(balance);
 }
 
-function renderRekap(monthly) {
-const container = document.getElementById("rekap-bulanan");
-container.innerHTML = "";
-
-Object.keys(monthly).sort().forEach(bulan => {
-const data = monthly[bulan];
-const saldo = data.masuk - data.keluar;
-
-container.innerHTML += `
-<div class="bg-gray-50 p-4 rounded-lg">
-<p class="text-xs font-bold">${bulan}</p>
-<p class="text-green-600 text-sm">Masuk: ${formatCurrency(data.masuk)}</p>
-<p class="text-red-500 text-sm">Keluar: ${formatCurrency(data.keluar)}</p>
-<p class="font-bold text-sm">Saldo: ${formatCurrency(saldo)}</p>
-</div>
-`;
-});
-}
-
-function renderChart(monthly) {
-const ctx = document.getElementById("chartBulanan");
-
-const labels = Object.keys(monthly).sort();
-const dataMasuk = labels.map(b => monthly[b].masuk);
-const dataKeluar = labels.map(b => monthly[b].keluar);
-
-if (chart) chart.destroy();
-
-chart = new Chart(ctx, {
-type: "bar",
-data: {
-labels: labels,
-datasets: [
-{
-label: "Masuk",
-data: dataMasuk,
-backgroundColor: "#16a34a"
-},
-{
-label: "Keluar",
-data: dataKeluar,
-backgroundColor: "#dc2626"
-}
-]
-}
-});
-}
-
-document.getElementById("current-date").innerText =
-new Date().toLocaleDateString("id-ID", {
-day: "numeric",
-month: "long",
-year: "numeric"
-});
-
-loadData();
-setInterval(loadData, 10000);
+calculateTotals();
 </script>
 
 </body>
 </html>
-
