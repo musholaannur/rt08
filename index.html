@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laporan Infaq Digital - Musholla Wakaf Annur</title>
 
-<!-- FIXED CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -18,58 +16,127 @@ body {
     color:#0f172a; 
 }
 
+/* STRUKTUR TAKMIR */
+.struktur-wrapper {
+    background:#f4f4f4;
+    padding:30px 15px;
+}
+.struktur-container {
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border:5px solid #8b5a2b;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    text-align:center;
+}
+.box {
+    border:2px solid #1a2a5a;
+    padding:10px;
+    margin:10px;
+    display:inline-block;
+    min-width:180px;
+    background:#fafafa;
+}
+.flex-box {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+.section-row {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:20px;
+}
+
+/* SALDO */
 .gradient-blue { 
     background: linear-gradient(135deg,#3b82f6 0%,#2563eb 100%); 
 }
-
 .shadow-custom { 
     box-shadow:0 10px 30px -5px rgba(0,0,0,0.05);
 }
 </style>
 </head>
 
-<body class="p-4 md:p-6 lg:p-8 bg-[#f8fafc]">
+<body>
 
+<!-- ================= STRUKTUR TAKMIR ================= -->
+<div class="struktur-wrapper">
+<div class="struktur-container">
+
+<h1 style="margin:0;color:#1a2a5a;">Musholla Wakaf Annur</h1>
+<h2 style="margin-top:5px;color:#1a2a5a;">STRUKTUR TAKMIR</h2>
+
+<div class="flex-box">
+<div class="box"><strong>Wakil Ketua</strong><br>Bpk Anton</div>
+<div class="box"><strong>Ketua</strong><br>Bpk Purnomo</div>
+<div class="box"><strong>Penasehat</strong><br>
+Bpk Mualif<br>Bpk Rokim, Mukarom<br>Bpk Fafa (Mas Wo)</div>
+</div>
+
+<div class="box"><strong>Sekretaris</strong><br>Wakil Sekretaris</div>
+
+<div class="flex-box">
+<div class="box"><strong>Bendahara 1</strong><br>Bpk Budi</div>
+<div class="box"><strong>Bendahara 2</strong><br>Mb Ratna</div>
+</div>
+
+<div class="section-row">
+<div class="box"><strong>Seksi Keamanan</strong><br>Bpk Heru Prasetyo<br>Bpk Puguh</div>
+<div class="box"><strong>Seksi Perawatan</strong><br>Bpk Ipin<br>Bpk Wiodado</div>
+<div class="box"><strong>Seksi Kegiatan</strong><br>Bpk Yatiran<br>Kardiyo<br>Mb Maya</div>
+<div class="box"><strong>Seksi Kebersihan</strong><br>Bpk Dwiyani<br>Bpk Sutikno<br>Mb Nurul</div>
+</div>
+
+</div>
+</div>
+
+<!-- ================= LAPORAN INFAQ ================= -->
+<div class="p-4 md:p-6 lg:p-8">
 <div class="max-w-7xl mx-auto space-y-4">
 
-<header class="bg-[#166534] text-white p-6 rounded-[1.5rem] flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-lg border-b-4 border-[#14532d]">
-<div>
+<header class="bg-[#166534] text-white p-6 rounded-[1.5rem] shadow-lg">
 <h1 class="font-black text-xl uppercase">Musholla Wakaf Annur</h1>
-<p class="text-xs text-[#4ade80] font-black uppercase tracking-widest">Laporan Infaq Digital System</p>
-</div>
-<div class="bg-[#14532d] px-4 py-2 rounded-xl md:rounded-full text-[10px] md:text-xs font-black uppercase leading-relaxed">
-<span>ALAMAT : JL. KADEMANGAN 1, RT 08 RW O4, BAKALAN LOR</span>
-</div>
+<p class="text-xs text-[#4ade80] font-black uppercase tracking-widest">
+Laporan Infaq Digital System
+</p>
 </header>
 
 <div class="gradient-blue p-10 rounded-[2.5rem] text-white text-center shadow-2xl">
 <p class="text-xs font-black uppercase tracking-widest">Saldo Infaq Saat Ini</p>
-<h2 class="text-5xl font-black tracking-tighter" id="totalBalance">Rp 0</h2>
+<h2 class="text-5xl font-black tracking-tighter" id="totalBalance">
+Rp 178.200
+</h2>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
 <div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#10b981] shadow-custom">
-<p class="text-xs font-black text-gray-400 uppercase tracking-widest">Total Pemasukan</p>
-<p class="text-3xl font-black text-[#10b981]" id="totalIncome">Rp 0</p>
+<p class="text-xs font-black text-gray-400 uppercase">Total Pemasukan</p>
+<p class="text-3xl font-black text-[#10b981]" id="totalIncome">
+Rp 1.335.000
+</p>
 </div>
 
 <div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#ef4444] shadow-custom">
-<p class="text-xs font-black text-gray-400 uppercase tracking-widest">Total Pengeluaran</p>
-<p class="text-3xl font-black text-[#ef4444]" id="totalExpense">Rp 0</p>
+<p class="text-xs font-black text-gray-400 uppercase">Total Pengeluaran</p>
+<p class="text-3xl font-black text-[#ef4444]" id="totalExpense">
+Rp 1.156.800
+</p>
 </div>
-
 </div>
 
 <div class="bg-white p-10 rounded-[2.5rem] shadow-custom">
-<h3 class="font-black text-xl uppercase tracking-widest text-[#166534] mb-6">
+<h3 class="font-black text-xl uppercase text-[#166534] mb-6">
 Laporan Mutasi Infaq
 </h3>
 
 <div class="overflow-x-auto">
 <table class="w-full text-left min-w-[800px]">
-
-<thead class="text-xs font-black text-gray-400 uppercase tracking-widest border-b-4 border-gray-50">
+<thead class="text-xs font-black text-gray-400 uppercase border-b-4">
 <tr>
 <th class="pb-4">TGL</th>
 <th class="pb-4">KETERANGAN</th>
@@ -80,93 +147,24 @@ Laporan Mutasi Infaq
 
 <tbody id="transactionList">
 
-<tr>
-<td class="py-4 text-gray-500 font-black">23/10/2025</td>
-<td class="py-4 font-black uppercase">SALDO INFAQ AWAL</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 1.000.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">23/11/2025</td>
-<td class="py-4 font-black uppercase">HAMBA ALLAH</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 50.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">23/11/2025</td>
-<td class="py-4 font-black uppercase">PEMBELIAN PASIR</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 400.000</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">23/11/2025</td>
-<td class="py-4 font-black uppercase">KONSUMSI MAKAN SIANG</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 90.000</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">13/01/2026</td>
-<td class="py-4 font-black uppercase">HAMBA ALLAH</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 150.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">23/01/2026</td>
-<td class="py-4 font-black uppercase">KERAMIK 5 DUS</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 360.000</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">26/01/2026</td>
-<td class="py-4 font-black uppercase">SEMEN GRESIK</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 58.000</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">26/01/2026</td>
-<td class="py-4 font-black uppercase">HAMBA ALLAH</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 50.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">15/02/2026</td>
-<td class="py-4 font-black uppercase">CAT & PERLENGKAPAN LAINNYA</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 159.000</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">17/02/2026</td>
-<td class="py-4 font-black uppercase">CETAK BANNER</td>
-<td class="py-4 text-right font-black text-[#10b981]">-</td>
-<td class="py-4 text-right font-black text-[#ef4444]">Rp 89.800</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">17/02/2026</td>
-<td class="py-4 font-black uppercase">INFAQ MEGENGAN IBU IBU</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 65.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
-
-<tr>
-<td class="py-4 text-gray-500 font-black">17/02/2026</td>
-<td class="py-4 font-black uppercase">INFAQ MEGENGAN BAPAK BAPAK</td>
-<td class="py-4 text-right font-black text-[#10b981]">Rp 20.000</td>
-<td class="py-4 text-right font-black text-[#ef4444]">-</td>
-</tr>
+<tr><td>23/10/2025</td><td>SALDO INFAQ AWAL</td><td class="text-right text-green-600">Rp 1.000.000</td><td class="text-right">-</td></tr>
+<tr><td>23/11/2025</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 50.000</td><td class="text-right">-</td></tr>
+<tr><td>23/11/2025</td><td>PEMBELIAN PASIR</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 400.000</td></tr>
+<tr><td>23/11/2025</td><td>KONSUMSI MAKAN SIANG</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 90.000</td></tr>
+<tr><td>13/01/2026</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 150.000</td><td class="text-right">-</td></tr>
+<tr><td>23/01/2026</td><td>KERAMIK 5 DUS</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 360.000</td></tr>
+<tr><td>26/01/2026</td><td>SEMEN GRESIK</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 58.000</td></tr>
+<tr><td>26/01/2026</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 50.000</td><td class="text-right">-</td></tr>
+<tr><td>15/02/2026</td><td>CAT & PERLENGKAPAN LAINNYA</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 159.000</td></tr>
+<tr><td>17/02/2026</td><td>CETAK BANNER</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 89.800</td></tr>
+<tr><td>17/02/2026</td><td>INFAQ MEGENGAN IBU IBU</td><td class="text-right text-green-600">Rp 65.000</td><td class="text-right">-</td></tr>
+<tr><td>17/02/2026</td><td>INFAQ MEGENGAN BAPAK BAPAK</td><td class="text-right text-green-600">Rp 20.000</td><td class="text-right">-</td></tr>
 
 </tbody>
 </table>
 </div>
+</div>
+
 </div>
 </div>
 
@@ -174,30 +172,23 @@ Laporan Mutasi Infaq
 function parseRupiah(text) {
   return parseInt(text.replace(/[^0-9]/g, '')) || 0;
 }
-
 function formatRupiah(num) {
   return "Rp " + num.toLocaleString("id-ID");
 }
-
 function calculateTotals() {
   let totalIncome = 0;
   let totalExpense = 0;
-
   document.querySelectorAll("#transactionList tr").forEach(row => {
     const masuk = row.children[2].innerText;
     const keluar = row.children[3].innerText;
-
     totalIncome += parseRupiah(masuk);
     totalExpense += parseRupiah(keluar);
   });
-
   const balance = totalIncome - totalExpense;
-
   document.getElementById("totalIncome").innerText = formatRupiah(totalIncome);
   document.getElementById("totalExpense").innerText = formatRupiah(totalExpense);
   document.getElementById("totalBalance").innerText = formatRupiah(balance);
 }
-
 calculateTotals();
 </script>
 
