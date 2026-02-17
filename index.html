@@ -59,6 +59,48 @@ body {
 .shadow-custom { 
     box-shadow:0 10px 30px -5px rgba(0,0,0,0.05);
 }
+
+/* ====== PERTEBAL RIWAYAT MUTASI ====== */
+.mutasi-title{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.mutasi-head th{
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    color:#6b7280;
+}
+
+.mutasi-body td{
+    font-size:17px;
+    font-weight:800;
+    padding-top:18px;
+    padding-bottom:18px;
+}
+
+.mutasi-date{
+    color:#6b7280;
+    font-weight:800;
+}
+
+.mutasi-ket{
+    font-weight:900;
+    color:#111827;
+    letter-spacing:0.3px;
+}
+
+.mutasi-masuk{
+    font-weight:900;
+    color:#10b981;
+}
+
+.mutasi-keluar{
+    font-weight:900;
+    color:#ef4444;
+}
 </style>
 </head>
 
@@ -130,13 +172,14 @@ Rp 1.156.800
 </div>
 
 <div class="bg-white p-10 rounded-[2.5rem] shadow-custom">
-<h3 class="font-black text-xl uppercase text-[#166534] mb-6">
+<h3 class="mutasi-title text-[#166534] mb-6 uppercase">
 Laporan Mutasi Infaq
 </h3>
 
 <div class="overflow-x-auto">
 <table class="w-full text-left min-w-[800px]">
-<thead class="text-xs font-black text-gray-400 uppercase border-b-4">
+
+<thead class="mutasi-head border-b-4">
 <tr>
 <th class="pb-4">TGL</th>
 <th class="pb-4">KETERANGAN</th>
@@ -145,20 +188,91 @@ Laporan Mutasi Infaq
 </tr>
 </thead>
 
-<tbody id="transactionList">
+<tbody id="transactionList" class="mutasi-body">
 
-<tr><td>23/10/2025</td><td>SALDO INFAQ AWAL</td><td class="text-right text-green-600">Rp 1.000.000</td><td class="text-right">-</td></tr>
-<tr><td>23/11/2025</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 50.000</td><td class="text-right">-</td></tr>
-<tr><td>23/11/2025</td><td>PEMBELIAN PASIR</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 400.000</td></tr>
-<tr><td>23/11/2025</td><td>KONSUMSI MAKAN SIANG</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 90.000</td></tr>
-<tr><td>13/01/2026</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 150.000</td><td class="text-right">-</td></tr>
-<tr><td>23/01/2026</td><td>KERAMIK 5 DUS</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 360.000</td></tr>
-<tr><td>26/01/2026</td><td>SEMEN GRESIK</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 58.000</td></tr>
-<tr><td>26/01/2026</td><td>HAMBA ALLAH</td><td class="text-right text-green-600">Rp 50.000</td><td class="text-right">-</td></tr>
-<tr><td>15/02/2026</td><td>CAT & PERLENGKAPAN LAINNYA</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 159.000</td></tr>
-<tr><td>17/02/2026</td><td>CETAK BANNER</td><td class="text-right">-</td><td class="text-right text-red-600">Rp 89.800</td></tr>
-<tr><td>17/02/2026</td><td>INFAQ MEGENGAN IBU IBU</td><td class="text-right text-green-600">Rp 65.000</td><td class="text-right">-</td></tr>
-<tr><td>17/02/2026</td><td>INFAQ MEGENGAN BAPAK BAPAK</td><td class="text-right text-green-600">Rp 20.000</td><td class="text-right">-</td></tr>
+<tr>
+<td class="mutasi-date">23/10/2025</td>
+<td class="mutasi-ket">SALDO INFAQ AWAL</td>
+<td class="text-right mutasi-masuk">Rp 1.000.000</td>
+<td class="text-right">-</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">23/11/2025</td>
+<td class="mutasi-ket">HAMBA ALLAH</td>
+<td class="text-right mutasi-masuk">Rp 50.000</td>
+<td class="text-right">-</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">23/11/2025</td>
+<td class="mutasi-ket">PEMBELIAN PASIR</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 400.000</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">23/11/2025</td>
+<td class="mutasi-ket">KONSUMSI MAKAN SIANG</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 90.000</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">13/01/2026</td>
+<td class="mutasi-ket">HAMBA ALLAH</td>
+<td class="text-right mutasi-masuk">Rp 150.000</td>
+<td class="text-right">-</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">23/01/2026</td>
+<td class="mutasi-ket">KERAMIK 5 DUS</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 360.000</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">26/01/2026</td>
+<td class="mutasi-ket">SEMEN GRESIK</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 58.000</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">26/01/2026</td>
+<td class="mutasi-ket">HAMBA ALLAH</td>
+<td class="text-right mutasi-masuk">Rp 50.000</td>
+<td class="text-right">-</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">15/02/2026</td>
+<td class="mutasi-ket">CAT & PERLENGKAPAN LAINNYA</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 159.000</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">17/02/2026</td>
+<td class="mutasi-ket">CETAK BANNER</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 89.800</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">17/02/2026</td>
+<td class="mutasi-ket">INFAQ MEGENGAN IBU IBU</td>
+<td class="text-right mutasi-masuk">Rp 65.000</td>
+<td class="text-right">-</td>
+</tr>
+
+<tr>
+<td class="mutasi-date">17/02/2026</td>
+<td class="mutasi-ket">INFAQ MEGENGAN BAPAK BAPAK</td>
+<td class="text-right mutasi-masuk">Rp 20.000</td>
+<td class="text-right">-</td>
+</tr>
 
 </tbody>
 </table>
