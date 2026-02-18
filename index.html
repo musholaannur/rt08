@@ -18,25 +18,30 @@ body {
 
 /* STRUKTUR TAKMIR */
 .struktur-wrapper {
-    background:#f4f4f4;
+    background: linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
     padding:30px 15px;
 }
 .struktur-container {
     max-width:1000px;
     margin:auto;
-    background:#fff;
+    background:#ffffff;
     padding:30px;
-    border:5px solid #8b5a2b;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    border:5px solid #2563eb;
+    box-shadow:0 0 15px rgba(0,0,0,0.25);
     text-align:center;
+    border-radius:20px;
 }
 .box {
-    border:2px solid #1a2a5a;
-    padding:10px;
+    border:2px solid #10b981;
+    padding:12px;
     margin:10px;
     display:inline-block;
     min-width:180px;
-    background:#fafafa;
+    background:#ecfdf5;
+    color:#065f46;
+    font-weight:700;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(16,185,129,0.25);
 }
 .flex-box {
     display:flex;
@@ -120,7 +125,7 @@ Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</div>
 </div>
 
 <div class="box"><strong>Sekretaris</strong><br>Bp. Sujatmoko</div>
-<div class="box"><strong>Wakil Sekretaris</strong><br>Ibu Nadia</div>
+<div class="box"><strong>Wakil Sekretaris</strong><br>Sdri. Nadia</div>
 
 <div class="flex-box">
 <div class="box"><strong>Bendahara 1</strong><br>Bp. Budi</div>
@@ -130,203 +135,12 @@ Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</div>
 <div class="section-row">
 <div class="box"><strong>Seksi Keamanan</strong><br>Bp. Heru Prasetyo<br>Bp. Puguh</div>
 <div class="box"><strong>Seksi Perawatan</strong><br>Bp. Ipin<br>Bp. Widodo</div>
-<div class="box"><strong>Seksi Kegiatan</strong><br>Bp. Yatiran<br>Bp. Kardiyo<br>Ibu Nurul<br>Ibu Sumiaton<br>Ibu Maya</div>
+<div class="box"><strong>Seksi Kegiatan</strong><br>Bp. Yatiran<br>Bp. Kardiyo<br>Ibu Nurul<br>Ibu Sumiaton<br>Sdri. Maya</div>
 <div class="box"><strong>Seksi Kebersihan</strong><br>Bp. Dwiyani<br>Bp. Sutikno</div>
 </div>
 
 </div>
 </div>
-
-<!-- ================= LAPORAN INFAQ ================= -->
-<div class="p-4 md:p-6 lg:p-8">
-<div class="max-w-7xl mx-auto space-y-4">
-
-<header class="bg-[#166534] text-white p-6 rounded-[1.5rem] shadow-lg text-center">
-<h1 class="font-black text-xl uppercase">MUSHOLLA WAKAF AN-NUR</h1>
-<p class="text-xs text-[#4ade80] font-black uppercase tracking-widest">
-LAPORAN INFAQ DIGITAL SYSTEM
-</p>
-</header>
-
-<div class="gradient-blue p-10 rounded-[2.5rem] text-white text-center shadow-2xl">
-<p class="text-xs font-black uppercase tracking-widest">Saldo Infaq Saat Ini</p>
-<h2 class="text-5xl font-black tracking-tighter" id="totalBalance">Rp 178.200</h2>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#10b981] shadow-custom">
-<p class="text-xs font-black text-gray-400 uppercase">Total Pemasukan</p>
-<p class="text-3xl font-black text-[#10b981]" id="totalIncome">Rp 1.335.000</p>
-</div>
-
-<div class="bg-white p-8 rounded-[2rem] border-l-[10px] border-[#ef4444] shadow-custom">
-<p class="text-xs font-black text-gray-400 uppercase">Total Pengeluaran</p>
-<p class="text-3xl font-black text-[#ef4444]" id="totalExpense">Rp 1.156.800</p>
-</div>
-</div>
-
-<div class="bg-white p-10 rounded-[2.5rem] shadow-custom">
-<h3 class="mutasi-title text-[#166534] mb-6 uppercase">Laporan Mutasi Infaq</h3>
-
-<div class="overflow-x-auto">
-<table class="w-full text-left min-w-[800px]">
-
-<thead class="mutasi-head border-b-4">
-<tr>
-<th class="pb-4">TGL</th>
-<th class="pb-4">KETERANGAN</th>
-<th class="pb-4 text-right">MASUK</th>
-<th class="pb-4 text-right">KELUAR</th>
-</tr>
-</thead>
-
-<tbody id="transactionList" class="mutasi-body">
-
-<tr>
-<td class="mutasi-date">23/10/2025</td>
-<td class="mutasi-ket">SALDO INFAQ AWAL</td>
-<td class="text-right mutasi-masuk">Rp 1.000.000</td>
-<td class="text-right">-</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">23/11/2025</td>
-<td class="mutasi-ket">HAMBA ALLAH</td>
-<td class="text-right mutasi-masuk">Rp 50.000</td>
-<td class="text-right">-</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">23/11/2025</td>
-<td class="mutasi-ket">
-PEMBELIAN PASIR<br>
-<a href="https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 400.000</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">23/11/2025</td>
-<td class="mutasi-ket">
-KONSUMSI MAKAN SIANG<br>
-<a href="https://drive.google.com/file/d/1d_x_Zu0nICw6Pc0PkyLxK3Dl4NLhrDiQ/view?usp=sharing" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 90.000</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">13/01/2026</td>
-<td class="mutasi-ket">HAMBA ALLAH</td>
-<td class="text-right mutasi-masuk">Rp 150.000</td>
-<td class="text-right">-</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">23/01/2026</td>
-<td class="mutasi-ket">
-KERAMIK 5 DUS<br>
-<a href="https://drive.google.com/file/d/1h23tajt7RTAWBHW6duHjK178CdNHNF-b/view?usp=sharing" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 360.000</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">26/01/2026</td>
-<td class="mutasi-ket">
-SEMEN GRESIK<br>
-<a href="https://drive.google.com/file/d/16S825nMMjCsclSQOFvWMOvUYvmGqtJ59/view?usp=drive_link" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 58.000</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">26/01/2026</td>
-<td class="mutasi-ket">HAMBA ALLAH</td>
-<td class="text-right mutasi-masuk">Rp 50.000</td>
-<td class="text-right">-</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">15/02/2026</td>
-<td class="mutasi-ket">
-CAT & PERLENGKAPAN LAINNYA<br>
-<a href="https://drive.google.com/file/d/124K1C2jaVXzmRqrW77vcWlU74GqkWbP2/view?usp=sharing" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 159.000</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">17/02/2026</td>
-<td class="mutasi-ket">
-CETAK BANNER<br>
-<a href="https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ/view?usp=sharing" target="_blank" class="text-blue-600 underline text-sm">
-Lihat Foto Nota
-</a>
-</td>
-<td class="text-right">-</td>
-<td class="text-right mutasi-keluar">Rp 89.800</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">17/02/2026</td>
-<td class="mutasi-ket">INFAQ MEGENGAN IBU IBU</td>
-<td class="text-right mutasi-masuk">Rp 65.000</td>
-<td class="text-right">-</td>
-</tr>
-
-<tr>
-<td class="mutasi-date">17/02/2026</td>
-<td class="mutasi-ket">INFAQ MEGENGAN BAPAK BAPAK</td>
-<td class="text-right mutasi-masuk">Rp 20.000</td>
-<td class="text-right">-</td>
-</tr>
-
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-</div>
-
-<script>
-function parseRupiah(text) {
-  return parseInt(text.replace(/[^0-9]/g, '')) || 0;
-}
-function formatRupiah(num) {
-  return "Rp " + num.toLocaleString("id-ID");
-}
-function calculateTotals() {
-  let totalIncome = 0;
-  let totalExpense = 0;
-  document.querySelectorAll("#transactionList tr").forEach(row => {
-    const masuk = row.children[2].innerText;
-    const keluar = row.children[3].innerText;
-    totalIncome += parseRupiah(masuk);
-    totalExpense += parseRupiah(keluar);
-  });
-  const balance = totalIncome - totalExpense;
-  document.getElementById("totalIncome").innerText = formatRupiah(totalIncome);
-  document.getElementById("totalExpense").innerText = formatRupiah(totalExpense);
-  document.getElementById("totalBalance").innerText = formatRupiah(balance);
-}
-calculateTotals();
-</script>
 
 </body>
 </html>
