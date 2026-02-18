@@ -65,7 +65,7 @@ body {
     box-shadow:0 10px 30px -5px rgba(0,0,0,0.05);
 }
 
-/* ====== PERTEBAL RIWAYAT MUTASI ====== */
+/* MUTASI */
 .mutasi-title{
     font-size:22px;
     font-weight:900;
@@ -85,19 +85,14 @@ body {
 }
 .mutasi-date{
     color:#6b7280;
-    font-weight:800;
 }
 .mutasi-ket{
     font-weight:900;
-    color:#111827;
-    letter-spacing:0.3px;
 }
 .mutasi-masuk{
-    font-weight:900;
     color:#10b981;
 }
 .mutasi-keluar{
-    font-weight:900;
     color:#ef4444;
 }
 </style>
@@ -109,11 +104,11 @@ body {
 <div class="struktur-wrapper">
 <div class="struktur-container">
 
-<h1 style="margin:0;color:#1a2a5a;font-weight:900;font-size:28px;letter-spacing:1px;">
+<h1 style="margin:0;color:#1a2a5a;font-weight:900;font-size:28px;">
 STRUKTUR PENGURUS TAKMIR
 </h1>
 
-<h2 style="margin-top:5px;color:#1a2a5a;font-weight:800;font-size:20px;letter-spacing:1px;">
+<h2 style="margin-top:5px;color:#1a2a5a;font-weight:800;font-size:20px;">
 MUSHOLLA WAKAF AN-NUR
 </h2>
 
@@ -121,7 +116,7 @@ MUSHOLLA WAKAF AN-NUR
 <div class="box"><strong>Ketua</strong><br>Bp. Purnomo</div>
 <div class="box"><strong>Wakil Ketua</strong><br>Bp. Anton</div>
 <div class="box"><strong>Penasehat</strong><br>
-Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</div>
+Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa</div>
 </div>
 
 <div class="box"><strong>Sekretaris</strong><br>Bp. Sujatmoko</div>
@@ -133,14 +128,108 @@ Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</div>
 </div>
 
 <div class="section-row">
-<div class="box"><strong>Seksi Keamanan</strong><br>Bp. Heru Prasetyo<br>Bp. Puguh</div>
+<div class="box"><strong>Seksi Keamanan</strong><br>Bp. Heru<br>Bp. Puguh</div>
 <div class="box"><strong>Seksi Perawatan</strong><br>Bp. Ipin<br>Bp. Widodo</div>
-<div class="box"><strong>Seksi Kegiatan</strong><br>Bp. Yatiran<br>Bp. Kardiyo<br>Ibu Nurul<br>Ibu Sumiaton<br>Sdri. Maya</div>
+<div class="box"><strong>Seksi Kegiatan</strong><br>Bp. Yatiran<br>Ibu Nurul</div>
 <div class="box"><strong>Seksi Kebersihan</strong><br>Bp. Dwiyani<br>Bp. Sutikno</div>
 </div>
 
 </div>
 </div>
+
+<!-- ================= LAPORAN INFAQ ================= -->
+<div class="p-6 max-w-7xl mx-auto space-y-6">
+
+<header class="bg-[#166534] text-white p-6 rounded-2xl shadow text-center">
+<h1 class="font-black text-xl uppercase">MUSHOLLA WAKAF AN-NUR</h1>
+<p class="text-xs text-[#4ade80] font-black uppercase tracking-widest">
+LAPORAN INFAQ DIGITAL SYSTEM
+</p>
+</header>
+
+<div class="gradient-blue p-10 rounded-3xl text-white text-center shadow-2xl">
+<p class="text-xs font-black uppercase tracking-widest">Saldo Infaq Saat Ini</p>
+<h2 class="text-5xl font-black tracking-tighter" id="totalBalance">Rp 0</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-8 rounded-2xl border-l-8 border-[#10b981] shadow-custom">
+<p class="text-xs font-black text-gray-400 uppercase">Total Pemasukan</p>
+<p class="text-3xl font-black text-[#10b981]" id="totalIncome">Rp 0</p>
+</div>
+
+<div class="bg-white p-8 rounded-2xl border-l-8 border-[#ef4444] shadow-custom">
+<p class="text-xs font-black text-gray-400 uppercase">Total Pengeluaran</p>
+<p class="text-3xl font-black text-[#ef4444]" id="totalExpense">Rp 0</p>
+</div>
+</div>
+
+<div class="bg-white p-10 rounded-3xl shadow-custom">
+<h3 class="mutasi-title text-[#166534] mb-6 uppercase">Laporan Mutasi Infaq</h3>
+
+<table class="w-full text-left">
+<thead class="mutasi-head border-b-4">
+<tr>
+<th>TGL</th>
+<th>KETERANGAN</th>
+<th class="text-right">MASUK</th>
+<th class="text-right">KELUAR</th>
+</tr>
+</thead>
+
+<tbody id="transactionList" class="mutasi-body">
+<tr>
+<td>23/10/2025</td>
+<td>SALDO AWAL</td>
+<td class="text-right mutasi-masuk">Rp 1.000.000</td>
+<td class="text-right">-</td>
+</tr>
+<tr>
+<td>23/11/2025</td>
+<td>HAMBA ALLAH</td>
+<td class="text-right mutasi-masuk">Rp 50.000</td>
+<td class="text-right">-</td>
+</tr>
+<tr>
+<td>23/11/2025</td>
+<td>PEMBELIAN PASIR</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 400.000</td>
+</tr>
+<tr>
+<td>15/02/2026</td>
+<td>CAT & PERLENGKAPAN</td>
+<td class="text-right">-</td>
+<td class="text-right mutasi-keluar">Rp 159.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<script>
+function parseRupiah(text) {
+  return parseInt(text.replace(/[^0-9]/g, '')) || 0;
+}
+function formatRupiah(num) {
+  return "Rp " + num.toLocaleString("id-ID");
+}
+function calculateTotals() {
+  let totalIncome = 0;
+  let totalExpense = 0;
+  document.querySelectorAll("#transactionList tr").forEach(row => {
+    const masuk = row.children[2].innerText;
+    const keluar = row.children[3].innerText;
+    totalIncome += parseRupiah(masuk);
+    totalExpense += parseRupiah(keluar);
+  });
+  document.getElementById("totalIncome").innerText = formatRupiah(totalIncome);
+  document.getElementById("totalExpense").innerText = formatRupiah(totalExpense);
+  document.getElementById("totalBalance").innerText = formatRupiah(totalIncome - totalExpense);
+}
+calculateTotals();
+</script>
 
 </body>
 </html>
