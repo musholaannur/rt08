@@ -396,4 +396,14 @@
             flake.style.fontSize = size;
             flake.style.opacity = Math.random();
             const duration = (Math.random() * 8) + 7 + 's';
-        
+        const delay = Math.random() * 5 + 's';
+            flake.style.animationDuration = duration + ', 3s';
+            flake.style.animationDelay = delay + ', ' + delay;
+            container.appendChild(flake);
+            setTimeout(() => { flake.remove(); }, 15000);
+        }
+        setInterval(createSnowflake, 400);
+    </script>
+
+</body>
+</html>
