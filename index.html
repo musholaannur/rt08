@@ -116,7 +116,7 @@
             transition: all 0.2s ease;
         }
         
-        /* Teks Jabatan CAPITAL FULL BOLD */
+        /* Teks Jabatan CAPITAL FULL BOLD - DIPASTIKAN SELALU 1 BARIS */
         .struktur-container .box strong {
             color: #0b6640; 
             font-weight: 900 !important; 
@@ -125,6 +125,7 @@
             display: block;
             text-align: center;
             text-transform: uppercase; 
+            white-space: nowrap !important; /* Mengunci teks jabatan agar wajib 1 baris */
         }
 
         /* OTOMATISASI RESPONSIVE MODE DESKTOP & MOBILE */
@@ -365,7 +366,7 @@
 
     <script>
         // Tautan URL Google Apps Script milik Anda sudah aktif di sini
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyMfoJA6Gy70OysZhAdSYUV5OyNhOzudRwE23T7kcAbKJrD__xufmomEGYt0bJ8bf7B/exec";
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxXHeovAbctksR4_iePWoyyLHN_tQ6tefG3VbeVAG4y49hQwdc6sPZ9alD_EzTGdDiMDw/exec";
         const SECURITY_PIN = "909"; 
         let currentDatabase = [];
         let currentAccessSession = { mode: null, index: null };
@@ -604,7 +605,7 @@
                 action: "CREATE",
                 rowIndex: null,
                 tanggal: document.getElementById("form-tanggal").value,
-                keterangan: document.getElementById("form-keterangan").value,
+                keterangan: document.getElementById("form-keterangan").value.toUpperCase(),
                 masuk: parseInt(document.getElementById("form-masuk").value) || 0,
                 keluar: parseInt(document.getElementById("form-keluar").value) || 0,
                 nota: document.getElementById("form-nota").value
@@ -625,46 +626,47 @@
             saveToLocalStorage();
             renderData(currentDatabase);
 
-            if (!WEB_APP_URL || WEB_APP_URL.includes("ISI_DENGAN_URL")) {
-                statusBadge.innerText = "Terupdate";
-                return;
-            }
-
             try {
                 await fetch(WEB_APP_URL, {
                     method: "POST",
+                    mode: "no-cors",
                     headers: { "Content-Type": "text/plain" },
                     body: JSON.stringify(payload)
                 });
-                setTimeout(fetchLiveKasData, 800);
+                setTimeout(fetchLiveKasData, 1200);
             } catch (error) {
-                setTimeout(fetchLiveKasData, 1000);
+                setTimeout(fetchLiveKasData, 1500);
             }
         }
 
         async function executeDelete(index) {
-            if (!confirm(`Hapus transaksi: "${currentDatabase[index].keterangan}"?`)) return;
+            const targetData = currentDatabase[index];
+            if (!confirm(`Hapus transaksi: "${targetData.keterangan}"?`)) return;
             const statusBadge = document.getElementById("loading-status");
             statusBadge.innerText = "Menghapus...";
+
+            const payload = {
+                action: "DELETE",
+                tanggal: targetData.tanggal,
+                keterangan: targetData.keterangan,
+                masuk: targetData.masuk,
+                keluar: targetData.keluar
+            };
 
             currentDatabase.splice(index, 1);
             saveToLocalStorage();
             renderData(currentDatabase);
 
-            if (!WEB_APP_URL || WEB_APP_URL.includes("ISI_DENGAN_URL")) {
-                statusBadge.innerText = "Terupdate";
-                return;
-            }
-
             try {
                 await fetch(WEB_APP_URL, {
                     method: "POST",
+                    mode: "no-cors",
                     headers: { "Content-Type": "text/plain" },
-                    body: JSON.stringify({ action: "DELETE", rowIndex: index })
+                    body: JSON.stringify(payload)
                 });
-                setTimeout(fetchLiveKasData, 800);
+                setTimeout(fetchLiveKasData, 1200);
             } catch (error) {
-                setTimeout(fetchLiveKasData, 1000);
+                setTimeout(fetchLiveKasData, 1500);
             }
         }
 
