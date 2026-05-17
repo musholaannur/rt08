@@ -551,7 +551,7 @@
                     rekapDiv.className = "flex flex-col gap-1.5 md:grid md:grid-cols-12 md:items-center py-2.5 px-3 my-2 bg-blue-600 text-white rounded-xl border border-blue-700 shadow-sm text-center text-[11px] md:text-xs tracking-wide uppercase";
                     rekapDiv.innerHTML = `
                         <div class="hidden md:block md:col-span-3 text-left font-black normal-case">AKUMULASI SALDO </div>
-                        <div class="text-left md:col-span-5 font-black normal-case text-center md:text-left">TOTAL SALDO BULAN ${getNamaBulan(item.tanggal)}</div>
+                        <div class="text-left md:col-span-5 font-black normal-case text-center md:text-left">BULAN ${getNamaBulan(item.tanggal)}</div>
                         <div class="text-center md:text-right md:col-span-3 text-base md:text-xl text-white normal-case">${formatRupiah(runningSaldo)}</div>
                         <div class="hidden md:block md:col-span-1 text-center">✓</div>
                     `;
