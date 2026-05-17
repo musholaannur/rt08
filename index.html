@@ -500,7 +500,7 @@
 
                 let notaHtml = "";
                 if (item.nota && item.nota.trim() !== "") {
-                    notaHtml = `<a href="${item.nota}" target="_blank" class="text-[10px] md:text-[11px] text-[#115e3b] hover:underline inline-block md:mt-0.5 tracking-wide bg-emerald-50 md:bg-transparent px-2 py-0.5 md:p-0 rounded border border-emerald-200 md:border-0 ml-2 md:ml-0">Lihat Foto Nota</a>`;
+                    notaHtml = `<a href="${item.nota}" target="_blank" class="text-[10px] md:text-[11px] text-blue-600 hover:underline inline-block md:mt-0.5 tracking-wide bg-blue-50 md:bg-transparent px-2 py-0.5 md:p-0 rounded border border-blue-200 md:border-0 ml-2 md:ml-0">Lihat Foto Nota</a>`;
                 }
 
                 rowContainer.innerHTML = `
@@ -523,7 +523,7 @@
                         <span class="md:hidden text-slate-400 uppercase text-[9px]">Keluar (-):</span>
                         <span>${keluar > 0 ? formatRupiah(keluar).replace("Rp ", "") : "-"}</span>
                     </div>
-                    <div class="md:col-span-1 md:text-right text-slate-800 text-xs md:text-sm flex justify-between md:justify-end md:pr-1 bg-slate-100/50 md:bg-transparent p-1 md:p-0 rounded">
+                    <div class="md:col-span-1 md:text-right text-blue-600 text-xs md:text-sm flex justify-between md:justify-end md:pr-1 bg-blue-50 md:bg-transparent p-1 md:p-0 rounded">
                         <span class="md:hidden text-slate-500 uppercase text-[9px]">Sisa Saldo:</span>
                         <span>${formatRupiah(runningSaldo).replace("Rp ", "")}</span>
                     </div>
@@ -548,11 +548,11 @@
 
                 if (isEndOfMonth) {
                     const rekapDiv = document.createElement("div");
-                    rekapDiv.className = "flex flex-col gap-1.5 md:grid md:grid-cols-12 md:items-center py-2.5 px-3 my-2 bg-emerald-400 text-[#0f5132] rounded-xl border border-emerald-500/30 shadow-sm text-center text-[11px] md:text-xs tracking-wide uppercase";
+                    rekapDiv.className = "flex flex-col gap-1.5 md:grid md:grid-cols-12 md:items-center py-2.5 px-3 my-2 bg-blue-600 text-white rounded-xl border border-blue-700 shadow-sm text-center text-[11px] md:text-xs tracking-wide uppercase";
                     rekapDiv.innerHTML = `
                         <div class="hidden md:block md:col-span-3 text-left font-black normal-case">AKUMULASI SALDO </div>
                         <div class="text-left md:col-span-5 font-black normal-case text-center md:text-left">TOTAL REKAP BULAN ${getNamaBulan(item.tanggal)}</div>
-                        <div class="text-center md:text-right md:col-span-3 text-base md:text-xl text-[#F8FAFC] md:[text-shadow:2px_2px_2px_#000000] normal-case">${formatRupiah(runningSaldo)}</div>
+                        <div class="text-center md:text-right md:col-span-3 text-base md:text-xl text-white normal-case">${formatRupiah(runningSaldo)}</div>
                         <div class="hidden md:block md:col-span-1 text-center">✓</div>
                     `;
                     container.appendChild(rekapDiv);
