@@ -517,15 +517,15 @@
                     </div>
                     <div class="md:col-span-2 md:text-right text-[#10b981] text-xs md:text-sm flex justify-between md:justify-end md:pr-1">
                         <span class="md:hidden text-slate-400 uppercase text-[9px]">Masuk (+):</span>
-                        <span>${masuk > 0 ? formatRupiah(masuk).replace("Rp ", "") : "-"}</span>
+                        <span>${masuk > 0 ? formatRupiah(masuk) : "-"}</span>
                     </div>
                     <div class="md:col-span-2 md:text-right text-[#ef4444] text-xs md:text-sm flex justify-between md:justify-end md:pr-1">
                         <span class="md:hidden text-slate-400 uppercase text-[9px]">Keluar (-):</span>
-                        <span>${keluar > 0 ? formatRupiah(keluar).replace("Rp ", "") : "-"}</span>
+                        <span>${keluar > 0 ? formatRupiah(keluar) : "-"}</span>
                     </div>
                     <div class="md:col-span-1 md:text-right text-blue-600 text-xs md:text-sm flex justify-between md:justify-end md:pr-1 bg-blue-50 md:bg-transparent p-1 md:p-0 rounded">
                         <span class="md:hidden text-slate-500 uppercase text-[9px]">Sisa Saldo:</span>
-                        <span>${formatRupiah(runningSaldo).replace("Rp ", "")}</span>
+                        <span>${formatRupiah(runningSaldo)}</span>
                     </div>
                     <div class="hidden md:col-span-1 md:flex justify-center">
                         <button onclick="requestAccess('delete', ${index})" class="text-rose-500 hover:text-rose-600 transition p-1" title="Hapus">
@@ -608,7 +608,7 @@
                 keterangan: document.getElementById("form-keterangan").value.toUpperCase(),
                 masuk: parseInt(document.getElementById("form-masuk").value) || 0,
                 keluar: parseInt(document.getElementById("form-keluar").value) || 0,
-                nota: document.getElementById("form-nota").value
+                nota: document.getElementById("form-saldo akhir").value
             };
 
             closeModal();
