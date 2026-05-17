@@ -241,7 +241,7 @@
                 </div>
                 <div>
                     <p class="text-sm sm:text-base font-black uppercase tracking-widest opacity-90">Saldo Infaq Saat Ini</p>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mt-2" id="totalBalance">Rp 0</h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mt-2" id="totalBalance">Memuat...</h2>
                 </div>
             </div>
 
@@ -263,7 +263,10 @@
             </div>
 
             <div class="bg-white p-5 sm:p-8 md:p-12 rounded-[2.5rem] shadow-custom w-full">
-                <h3 class="mutasi-title text-[#166534] mb-6 sm:mb-8 uppercase tracking-wide font-black text-xl sm:text-2xl md:text-3xl">Laporan Mutasi Infaq</h3>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+                    <h3 class="mutasi-title text-[#166534] uppercase tracking-wide font-black text-xl sm:text-2xl md:text-3xl">Laporan Mutasi Infaq</h3>
+                    <span id="cloudStatus" class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full border border-amber-300 uppercase tracking-wide font-black animate-pulse">Menghubungkan ke Cloud...</span>
+                </div>
                 
                 <div class="hidden md:block w-full overflow-x-auto">
                     <table class="w-full text-left table-fixed">
@@ -374,33 +377,51 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8TMUzd3fCC3jULPu1is6n2FSPsKJ52q3cV1plQWDuq4CbOiBh_68KGHa5lO3au5Bm/exec";
 
-        const mutasiData = [
-            { tgl: "23/10/2025", ket: "SALDO INFAQ AWAL", masuk: 1000000, keluar: 0, nota: "" },
-            { tgl: "23/11/2025", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "23/11/2025", ket: "PEMBELIAN PASIR", masuk: 0, keluar: 400000, nota: "https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" },
-            { tgl: "23/11/2025", ket: "KONSUMSI MAKAN SIANG", masuk: 0, keluar: 90000, nota: "https://drive.google.com/file/d/1d_x_Zu0nICw6Pc0PkyLxK3Dl4NLhrDiQ/view?usp=sharing" },
-            { tgl: "13/01/2026", ket: "HAMBA ALLAH", masuk: 150000, keluar: 0, nota: "" },
-            { tgl: "23/01/2026", ket: "KERAMIK 5 DUS", masuk: 0, keluar: 360000, nota: "https://drive.google.com/file/d/1h23tajt7RTAWBHW6duHjK178CdNHNF-b/view?usp=sharing" },
-            { tgl: "26/01/2026", ket: "SEMEN GRESIK", masuk: 0, keluar: 58000, nota: "https://drive.google.com/file/d/16S825nMMjCsclSQOFvWMOvUYvmGqtJ59/view?drive_link" },
-            { tgl: "26/01/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "15/02/2026", ket: "CAT & PERLENGKAPAN LAINNYA", masuk: 0, keluar: 159000, nota: "https://drive.google.com/file/d/124K1C2jaVXzmRqrW77vcWlU74GqkWbP2/view?usp=sharing" },
-            { tgl: "17/02/2026", ket: "CATALAN BANNER SELAMAT MENUNAIKAN IBADAH PUASA", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ/view?usp=sharing" },
-            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN IBU IBU", masuk: 65000, keluar: 0, nota: "" },
-            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN BAPAK BAPAK", masuk: 20000, keluar: 0, nota: "" },
-            { tgl: "06/03/2026", ket: "DANA SUMBANGAN OLEH TAKMIR", masuk: 534000, keluar: 0, nota: "" },
-            { tgl: "06/03/2026", ket: "KONSUMSI TAKJIL DLL", masuk: 0, keluar: 494000, nota: "https://drive.google.com/file/d/1xraqs1gkwaaV_TgA3lSH9UbcEQsQ2AoR/view?usp=drive_link" },
-            { tgl: "17/03/2026", ket: "CETAK BANNER SELAMAT HARI RAYA IDUL FITRI", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ9/view?usp=sharing" },
-            { tgl: "11/05/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "12/05/2026", ket: "DANA KOTAK INFAQ", masuk: 250000, keluar: 0, nota: "" },
-            { tgl: "13/05/2026", ket: "KONSUMSI, KRESEK & FOTOCOPY UNDANGAN.", masuk: 0, keluar: 250000, nota: "https://drive.google.com/file/d/1s38Z6uBdeYT1Gk525AMSq9C2hVomMylK/view?usp=sharing" },
-            { tgl: "13/05/2026", ket: "INFAQ ISTIGHOSAH BAPAK² & IBU²", masuk: 185000, keluar: 0, nota: "https://drive.google.com/file/d/118QmwCoEI9WemnqGMt6HmFQjiDOjEajw/view?usp=sharing" }
-        ];
+        // Array penampung database dinamis cloud spreadsheet
+        let mutasiData = [];
 
         let modeAksiGlobal = "";
         let indexHapusGlobal = null;
 
         function formatRupiah(num) {
             return num === 0 ? "-" : "Rp " + num.toLocaleString("id-ID");
+        }
+
+        // FUNGSI AUTO-LOAD DATA PERTAMA KALI SAAT HALAMAN DIBUKA (PENCEGAH DATA HILANG DI VERCEL)
+        function muatDataDariSpreadsheet() {
+            const statusBadge = document.getElementById("cloudStatus");
+            
+            fetch(GOOGLE_SCRIPT_URL, { method: "GET" })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.length > 0) {
+                    // Mapping data dari Spreadsheet cloud ke format aplikasi lokal
+                    mutasiData = data.map(row => ({
+                        tgl: row.tanggal || "",
+                        ket: (row.keterangan || "").toUpperCase(),
+                        masuk: parseInt(row.masuk) || 0,
+                        keluar: parseInt(row.keluar) || 0,
+                        nota: row.nota || ""
+                    }));
+                }
+                statusBadge.innerText = "ONLINE - SINKRON";
+                statusBadge.className = "bg-emerald-100 text-emerald-800 text-xs px-3 py-1.5 rounded-full border border-emerald-300 uppercase tracking-wide font-black";
+                renderMutasi();
+            })
+            .catch(error => {
+                console.error("Gagal sinkronisasi data:", error);
+                statusBadge.innerText = "Koneksi Offline Cloud";
+                statusBadge.className = "bg-rose-100 text-rose-800 text-xs px-3 py-1.5 rounded-full border border-rose-300 uppercase tracking-wide font-black";
+                
+                // Backup data cadangan statis jika koneksi Google sheets bermasalah/interupsi
+                mutasiData = [
+                    { tgl: "23/10/2025", ket: "SALDO INFAQ AWAL", masuk: 1000000, keluar: 0, nota: "" },
+                    { tgl: "23/11/2025", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
+                    { tgl: "23/11/2025", ket: "PEMBELIAN PASIR", masuk: 0, keluar: 400000, nota: "https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" },
+                    { tgl: "13/05/2026", ket: "INFAQ ISTIGHOSAH BAPAK² & IBU²", masuk: 185000, keluar: 0, nota: "https://drive.google.com/file/d/118QmwCoEI9WemnqGMt6HmFQjiDOjEajw/view?usp=sharing" }
+                ];
+                renderMutasi();
+            });
         }
 
         function bukaModalPin(mode, index = null) {
@@ -479,7 +500,6 @@
             btnSimpan.disabled = true;
             textSimpan.innerText = "Memproses...";
 
-            // Kirim ke Google Sheets API menggunakan URL yang Anda berikan
             fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
                 mode: "no-cors",
@@ -487,11 +507,10 @@
                 body: JSON.stringify(dataForm)
             })
             .then(() => {
-                // Mengubah format tanggal YYYY-MM-DD menjadi DD/MM/YYYY agar seragam di tabel
                 const tglSplit = dataForm.tanggal.split("-");
                 const tglFormatted = `${tglSplit[2]}/${tglSplit[1]}/${tglSplit[0]}`;
 
-                // Tambahkan data baru ke array lokal agar tidak hilang dari tampilan
+                // Push permanen ke database lokal agar data langsung bertambah tanpa hilang
                 mutasiData.push({
                     tgl: tglFormatted,
                     ket: dataForm.keterangan.toUpperCase(),
@@ -500,7 +519,6 @@
                     nota: dataForm.nota
                 });
 
-                // Update rendering tabel/card secara real-time
                 renderMutasi();
                 alert("Data Berhasil Disimpan & Sinkron ke Google Sheets!");
                 tutupModal();
@@ -603,7 +621,8 @@
             document.getElementById("totalBalance").innerText = "Rp " + (totalIncome - totalExpense).toLocaleString("id-ID");
         }
 
-        renderMutasi();
+        // Panggil fungsi muat data otomatis dari spreadsheet saat aplikasi pertama kali terbuka di Vercel
+        window.addEventListener("DOMContentLoaded", muatDataDariSpreadsheet);
 
         function createSnowflake() {
             const snowflakeChars = ['❄', '❅', '❆', '✻', '✽'];
