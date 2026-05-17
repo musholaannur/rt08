@@ -6,14 +6,14 @@
     <title>Laporan Infaq Digital - Musholla Wakaf Annur</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=700;800;900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background:#f8fafc;
             color:#0f172a;
             overflow-x: hidden;
             font-weight: 900;
-            letter-spacing: -0.02em; /* Membuat teks lebih padat */
+            letter-spacing: -0.02em;
         }
         /* --- STRUKTUR TAKMIR CSS CORE --- */
         .struktur-wrapper {
@@ -81,12 +81,12 @@
         .mutasi-body td {
             font-size: 19px;
             font-weight: 900;
-            padding-top: 16px; /* Lebih rapat dan padat */
+            padding-top: 16px;
             padding-bottom: 16px;
-            letter-spacing: -0.03em; /* Angka lebih rapat dan jelas */
+            letter-spacing: -0.03em;
         }
         .mutasi-date {
-            color: #0f172a; /* Diubah menjadi lebih gelap agar lebih jelas */
+            color: #0f172a;
             font-weight: 900;
         }
         .mutasi-ket {
@@ -98,15 +98,15 @@
         }
         .mutasi-masuk {
             font-weight: 900;
-            color: #059669; /* Hijau yang lebih kontras dan jelas */
+            color: #059669;
         }
         .mutasi-keluar {
             font-weight: 900;
-            color: #dc2626; /* Merah yang lebih kontras dan jelas */
+            color: #dc2626;
         }
         .saldo-col {
             font-weight: 900;
-            color: #1d4ed8; /* Biru yang lebih tajam */
+            color: #1d4ed8;
         }
         /* --- WIFI ONLINE RADAR --- */
         .wifi-container {
@@ -244,7 +244,7 @@
                 </div>
                 <div>
                     <p class="text-sm sm:text-base font-black uppercase tracking-wider opacity-90">Saldo Infaq Saat Ini</p>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mt-2" id="totalBalance">Rp 0</h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mt-2" id="totalBalance">Memuat...</h2>
                 </div>
             </div>
 
@@ -281,63 +281,55 @@
                             </tr>
                         </thead>
                         <tbody id="transactionListDesktop" class="mutasi-body font-black text-lg md:text-xl">
+                            <tr><td colspan="6" class="text-center py-10 text-slate-400">Menghubungkan ke Cloud Spreadsheet...</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="block md:hidden space-y-4 font-black w-full" id="transactionListMobile">
+                    <p class="text-center py-6 text-slate-400">Menghubungkan ke Cloud Spreadsheet...</p>
                 </div>
 
             </div>
         </div>
     </div>
 
+    <!-- MODAL PIN -->
     <div id="modalPin" class="fixed inset-0 bg-black/70 backdrop-blur-md z-[20000] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-[2.5rem] max-w-md md:max-w-2xl w-full text-center border border-slate-200 shadow-2xl overflow-hidden pb-8 transition-all">
-            
             <div class="bg-white text-slate-900 py-6 sm:py-8 px-6 text-center w-full border-b-2 border-slate-100 mb-6">
                 <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-slate-900">OTORISASI TAKMIR</h3>
                 <p class="text-xs sm:text-sm text-slate-600 font-black uppercase tracking-wider mt-1.5">Masukan PIN 6 Digit Angka</p>
             </div>
-            
             <div class="px-6 sm:px-16 space-y-5">
                 <div class="relative">
                     <input type="password" id="inputPinKeamanan" maxlength="6" inputmode="numeric" pattern="[0-9]*" placeholder="••••••" class="w-full text-center border-2 border-slate-300 rounded-2xl px-4 py-4 font-black text-3xl tracking-[0.4em] text-slate-900 bg-slate-50 focus:border-blue-700 focus:outline-none transition-all">
                     <p id="errorPinText" class="text-sm text-rose-700 font-black mt-2 hidden">PIN Salah! Akses Ditolak.</p>
                 </div>
-                
                 <div class="flex gap-4 pt-2 border-t border-slate-100">
-                    <button onclick="tutupModalPin()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition-all">
-                        Batal
-                    </button>
-                    <button onclick="validasiPinOtorizations()" class="w-1/2 bg-blue-700 hover:bg-blue-800 text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-md transition-all">
-                        Konfirmasi
-                    </button>
+                    <button onclick="tutupModalPin()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition-all">Batal</button>
+                    <button onclick="validasiPinOtorizations()" class="w-1/2 bg-blue-700 hover:bg-blue-800 text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-md transition-all">Konfirmasi</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- MODAL TRANSAKSI -->
     <div id="modalTransaksi" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[10000] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-[2.5rem] max-w-md md:max-w-2xl w-full text-slate-800 text-base overflow-hidden shadow-2xl relative border border-slate-200 pb-6 md:pb-8 transition-all">
-            
             <div class="bg-[#14532d] text-white py-6 px-6 md:px-8 text-center w-full border-b-2 border-emerald-800 mb-6">
                 <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">INPUT DATA</h3>
                 <p class="text-xs sm:text-sm text-[#22c55e] font-black uppercase tracking-wider mt-1.5">Laporan Infaq Digital System</p>
             </div>
-            
             <form id="formInputTransaksi" onsubmit="kirimDataKeGoogleSheets(event)" class="px-6 md:px-8 space-y-5">
-                
                 <div class="space-y-1.5">
                     <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Tanggal Input Data</label>
                     <input type="date" id="inputTanggal" required class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
-
                 <div class="space-y-1.5">
                     <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Keterangan Input Data</label>
                     <input type="text" id="inputKeterangan" required placeholder="Contoh : INPUT DATA" class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 placeholder-slate-400 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
-
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-1.5">
                         <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Nominal Masuk (Rp)</label>
@@ -348,16 +340,12 @@
                         <input type="number" id="inputKeluar" min="0" value="0" required class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                     </div>
                 </div>
-
                 <div class="space-y-1.5">
                     <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Link URL Foto Nota (Opsional)</label>
                     <input type="url" id="inputNota" placeholder="https://drive.google.com/..." class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 placeholder-slate-400 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
-
                 <div class="flex items-center justify-end gap-4 pt-5 border-t border-slate-200">
-                    <button type="button" onclick="tutupModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-6 py-3.5 rounded-xl font-black transition-all tracking-wider text-sm uppercase">
-                        Batal
-                    </button>
+                    <button type="button" onclick="tutupModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-6 py-3.5 rounded-xl font-black transition-all tracking-wider text-sm uppercase">Batal</button>
                     <button type="submit" id="btnSimpan" class="bg-[#14532d] hover:bg-[#166534] text-white px-6 py-3.5 rounded-xl font-black transition-all shadow-md tracking-wider text-sm uppercase flex items-center gap-2">
                         <span id="textSimpan">Simpan Data</span>
                     </button>
@@ -367,37 +355,16 @@
     </div>
 
     <div class="text-center py-12">
-        <p class="text-sm font-black text-slate-600 tracking-[0.3em] uppercase">
-            Powered By : MBS ID
-        </p>
+        <p class="text-sm font-black text-slate-600 tracking-[0.3em] uppercase">Powered By : MBS ID</p>
     </div>
 
     <div id="snow-container" aria-hidden="true"></div>
 
     <script>
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyeHCeVz3auAY7aa8rHtzdvQIoo1hAEuQy-oqzLMeL8shlSu6bR-hoskSYeS8HO7dj5/exec";
+        // URL WEB APP BARU YANG SUDAH DIGANTI
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMfoJA6Gy70OysZhAdSYUV5OyNhOzudRwE23T7kcAbKJrD__xufmomEGYt0bJ8bf7B/exec";
 
-        const mutasiData = [
-            { tgl: "23/10/2025", ket: "SALDO INFAQ AWAL", masuk: 1000000, keluar: 0, nota: "" },
-            { tgl: "23/11/2025", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "23/11/2025", ket: "PEMBELIAN PASIR", masuk: 0, keluar: 400000, nota: "https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" },
-            { tgl: "23/11/2025", ket: "KONSUMSI MAKAN SIANG", masuk: 0, keluar: 90000, nota: "https://drive.google.com/file/d/1d_x_Zu0nICw6Pc0PkyLxK3Dl4NLhrDiQ/view?usp=sharing" },
-            { tgl: "13/01/2026", ket: "HAMBA ALLAH", masuk: 150000, keluar: 0, nota: "" },
-            { tgl: "23/01/2026", ket: "KERAMIK 5 DUS", masuk: 0, keluar: 360000, nota: "https://drive.google.com/file/d/1h23tajt7RTAWBHW6duHjK178CdNHNF-b/view?usp=sharing" },
-            { tgl: "26/01/2026", ket: "SEMEN GRESIK", masuk: 0, keluar: 58000, nota: "https://drive.google.com/file/d/16S825nMMjCsclSQOFvWMOvUYvmGqtJ59/view?drive_link" },
-            { tgl: "26/01/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "15/02/2026", ket: "CAT & PERLENGKAPAN LAINNYA", masuk: 0, keluar: 159000, nota: "https://drive.google.com/file/d/124K1C2jaVXzmRqrW77vcWlU74GqkWbP2/view?usp=sharing" },
-            { tgl: "17/02/2026", ket: "CATALAN BANNER SELAMAT MENUNAIKAN IBADAH PUASA", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ/view?usp=sharing" },
-            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN IBU IBU", masuk: 65000, keluar: 0, nota: "" },
-            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN BAPAK BAPAK", masuk: 20000, keluar: 0, nota: "" },
-            { tgl: "06/03/2026", ket: "DANA SUMBANGAN OLEH TAKMIR", masuk: 534000, keluar: 0, nota: "" },
-            { tgl: "06/03/2026", ket: "KONSUMSI TAKJIL DLL", masuk: 0, keluar: 494000, nota: "https://drive.google.com/file/d/1xraqs1gkwaaV_TgA3lSH9UbcEQsQ2AoR/view?usp=drive_link" },
-            { tgl: "17/03/2026", ket: "CETAK BANNER SELAMAT HARI RAYA IDUL FITRI", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ9/view?usp=sharing" },
-            { tgl: "11/05/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-            { tgl: "12/05/2026", ket: "DANA KOTAK INFAQ", masuk: 250000, keluar: 0, nota: "" },
-            { tgl: "13/05/2026", ket: "KONSUMSI, KRESEK & FOTOCOPY UNDANGAN.", masuk: 0, keluar: 250000, nota: "https://drive.google.com/file/d/1s38Z6uBdeYT1Gk525AMSq9C2hVomMylK/view?usp=sharing" },
-            { tgl: "13/05/2026", ket: "INFAQ ISTIGHOSAH BAPAK² & IBU²", masuk: 185000, keluar: 0, nota: "https://drive.google.com/file/d/118QmwCoEI9WemnqGMt6HmFQjiDOjEajw/view?usp=sharing" }
-        ];
+        let mutasiData = [];
 
         let modeAksiGlobal = "";
         let indexHapusGlobal = null;
@@ -406,21 +373,33 @@
             return num === 0 ? "-" : "Rp " + num.toLocaleString("id-ID");
         }
 
+        function muatDataDariSheets() {
+            fetch(GOOGLE_SCRIPT_URL)
+            .then(response => response.json())
+            .then(data => {
+                if (Array.isArray(data)) {
+                    mutasiData = data;
+                    renderMutasi();
+                } else {
+                    console.error("Format data salah");
+                }
+            })
+            .catch(error => {
+                console.error("Error mengambil data:", error);
+                document.getElementById("totalBalance").innerText = "Gagal Memuat";
+            });
+        }
+
         function bukaModalPin(mode, index = null) {
             modeAksiGlobal = mode;
             indexHapusGlobal = index;
-            
             document.getElementById("errorPinText").classList.add("hidden");
             document.getElementById("inputPinKeamanan").value = "";
             document.getElementById("modalPin").classList.remove("hidden");
-            setTimeout(() => {
-                document.getElementById("inputPinKeamanan").focus();
-            }, 100);
+            setTimeout(() => { document.getElementById("inputPinKeamanan").focus(); }, 100);
         }
 
-        function tutupModalPin() {
-            document.getElementById("modalPin").classList.add("hidden");
-        }
+        function tutupModalPin() { document.getElementById("modalPin").classList.add("hidden"); }
 
         function validasiPinOtorizations() {
             const pinValue = document.getElementById("inputPinKeamanan").value;
@@ -449,14 +428,12 @@
             document.getElementById("formInputTransaksi").reset();
         }
 
-        function hapusTransaksi(index) {
-            bukaModalPin('delete', index);
-        }
+        function hapusTransaksi(index) { bukaModalPin('delete', index); }
 
         function eksekusiHapusLokal(index) {
             mutasiData.splice(index, 1);
             renderMutasi();
-            alert("Data transaksi berhasil dihapus dari tampilan lokal!");
+            alert("Data berhasil dihapus dari tampilan! (Lakukan penghapusan manual di Spreadsheet jika diperlukan)");
             indexHapusGlobal = null;
             modeAksiGlobal = "";
         }
@@ -489,24 +466,13 @@
                 body: JSON.stringify(dataForm)
             })
             .then(() => {
-                const tglSplit = dataForm.tanggal.split("-");
-                const tglFormatted = `${tglSplit[2]}/${tglSplit[1]}/${tglSplit[0]}`;
-
-                mutasiData.push({
-                    tgl: tglFormatted,
-                    ket: dataForm.keterangan.toUpperCase(),
-                    masuk: dataForm.masuk,
-                    keluar: dataForm.keluar,
-                    nota: dataForm.nota
-                });
-
-                renderMutasi();
-                alert("Data Berhasil Disimpan & Sinkron ke Google Sheets!");
+                alert("Data Berhasil Disimpan ke Google Sheets!");
                 tutupModal();
+                muatDataDariSheets(); 
             })
             .catch(error => {
                 console.error("Error:", error);
-                alert("Terjadi kendala saat menyimpan data ke cloud spreadsheet.");
+                alert("Terjadi kendala saat menyimpan data.");
             })
             .finally(() => {
                 btnSimpan.disabled = false;
@@ -524,6 +490,12 @@
             
             desktopBody.innerHTML = "";
             mobileContainer.innerHTML = "";
+
+            if (mutasiData.length === 0) {
+                desktopBody.innerHTML = '<tr><td colspan="6" class="text-center py-10 text-slate-400">Belum ada data mutasi.</td></tr>';
+                mobileContainer.innerHTML = '<p class="text-center py-6 text-slate-400">Belum ada data mutasi.</p>';
+                return;
+            }
 
             mutasiData.forEach((item, index) => {
                 totalIncome += item.masuk;
@@ -602,7 +574,7 @@
             document.getElementById("totalBalance").innerText = "Rp " + (totalIncome - totalExpense).toLocaleString("id-ID");
         }
 
-        renderMutasi();
+        muatDataDariSheets();
 
         function createSnowflake() {
             const snowflakeChars = ['❄', '❅', '❆', '✻', '✽'];
