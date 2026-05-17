@@ -13,6 +13,7 @@
             color:#0f172a;
             overflow-x: hidden;
             font-weight: 900;
+            letter-spacing: -0.02em; /* Membuat teks lebih padat */
         }
         /* --- STRUKTUR TAKMIR CSS CORE --- */
         .struktur-wrapper {
@@ -42,6 +43,7 @@
             border-radius: 16px;
             box-shadow: 0 6px 12px rgba(16,185,129,0.3);
             vertical-align: top;
+            letter-spacing: -0.03em;
         }
         .flex-box {
             display: flex;
@@ -68,42 +70,43 @@
         .mutasi-title {
             font-size: 26px;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: -0.02em;
         }
         .mutasi-head th {
             font-size: 16px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: -0.01em;
             color: #0f172a;
         }
         .mutasi-body td {
             font-size: 19px;
             font-weight: 900;
-            padding-top: 22px;
-            padding-bottom: 22px;
+            padding-top: 16px; /* Lebih rapat dan padat */
+            padding-bottom: 16px;
+            letter-spacing: -0.03em; /* Angka lebih rapat dan jelas */
         }
         .mutasi-date {
-            color: #64748b;
+            color: #0f172a; /* Diubah menjadi lebih gelap agar lebih jelas */
             font-weight: 900;
         }
         .mutasi-ket {
             font-weight: 900;
             color: #0f172a;
-            letter-spacing: 0.3px;
+            letter-spacing: -0.02em;
             text-align: left;
             word-wrap: break-word;
         }
         .mutasi-masuk {
             font-weight: 900;
-            color: #10b981;
+            color: #059669; /* Hijau yang lebih kontras dan jelas */
         }
         .mutasi-keluar {
             font-weight: 900;
-            color: #ef4444;
+            color: #dc2626; /* Merah yang lebih kontras dan jelas */
         }
         .saldo-col {
             font-weight: 900;
-            color: #1e40af;
+            color: #1d4ed8; /* Biru yang lebih tajam */
         }
         /* --- WIFI ONLINE RADAR --- */
         .wifi-container {
@@ -116,10 +119,10 @@
         }
         .wifi-text {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.05em;
             color: #00ff00;
             text-shadow: 0 0 12px #00ff00;
         }
@@ -188,38 +191,38 @@
         }
     </style>
 </head>
-<body class="font-black text-slate-900 text-lg">
+<body class="font-black text-slate-950 text-lg selection:bg-emerald-500 selection:text-white">
 
     <div class="struktur-wrapper">
         <div class="struktur-container">
-            <h1 class="font-black text-slate-800 tracking-wide mb-1 text-2xl sm:text-3xl md:text-4xl">STRUKTUR PENGURUS TAKMIR</h1>
-            <h2 class="font-black text-slate-800 tracking-wide text-lg sm:text-xl md:text-2xl mb-8">MUSHOLLA WAKAF AN-NUR</h2>
+            <h1 class="font-black text-slate-900 tracking-tight mb-1 text-2xl sm:text-3xl md:text-4xl">STRUKTUR PENGURUS TAKMIR</h1>
+            <h2 class="font-black text-slate-900 tracking-tight text-lg sm:text-xl md:text-2xl mb-8">MUSHOLLA WAKAF AN-NUR</h2>
             
             <div class="flex-box">
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Ketua</span><span class="text-base sm:text-lg font-black block">Bp. Purnomo</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Wakil Ketua</span><span class="text-base sm:text-lg font-black block">Bp. Anton</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Penasehat</span><span class="text-base sm:text-lg font-black block leading-relaxed">Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Ketua</span><span class="text-base sm:text-lg font-black block">Bp. Purnomo</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Wakil Ketua</span><span class="text-base sm:text-lg font-black block">Bp. Anton</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Penasehat</span><span class="text-base sm:text-lg font-black block leading-tight">Bp. Mualif<br>Bp. Rokim, Bp. Mukarom<br>Bp. Fafa (Mas Wo)</span></div>
             </div>
             
             <div class="flex-box mt-2">
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Sekretaris</span><span class="text-base sm:text-lg font-black block">Bp. Sujatmoko</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Wakil Sekretaris</span><span class="text-base sm:text-lg font-black block">Sdri. Nadia</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Sekretaris</span><span class="text-base sm:text-lg font-black block">Bp. Sujatmoko</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Wakil Sekretaris</span><span class="text-base sm:text-lg font-black block">Sdri. Nadia</span></div>
             </div>
             
             <div class="flex-box mt-2">
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Bendahara 1</span><span class="text-base sm:text-lg font-black block">Bp. Budi</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Bendahara 2</span><span class="text-base sm:text-lg font-black block">Ibu Ratna</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Bendahara 1</span><span class="text-base sm:text-lg font-black block">Bp. Budi</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Bendahara 2</span><span class="text-base sm:text-lg font-black block">Ibu Ratna</span></div>
             </div>
             
             <div class="section-row">
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Seksi Keamanan</span><span class="text-base sm:text-lg font-black block leading-relaxed">Bp. Heru Prasetyo<br>Bp. Puguh</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Seksi Perawatan</span><span class="text-base sm:text-lg font-black block leading-relaxed">Bp. Ipin<br>Bp. Widodo<br>Bp. Suparno<br>Bp. Doni</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Seksi Kegiatan</span><span class="text-sm sm:text-base font-black block leading-relaxed">Bp. Yatiran<br>Bp. Kardiyo<br>Ibu Nurul<br>Ibu Sumiaton<br>Sdri. Maya</span></div>
-                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Seksi Kebersihan</span><span class="text-base sm:text-lg font-black block leading-relaxed">Bp. Dwiyani<br>Bp. Sutikno</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Seksi Keamanan</span><span class="text-base sm:text-lg font-black block leading-tight">Bp. Heru Prasetyo<br>Bp. Puguh</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Seksi Perawatan</span><span class="text-base sm:text-lg font-black block leading-tight">Bp. Ipin<br>Bp. Widodo<br>Bp. Suparno<br>Bp. Doni</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Seksi Kegiatan</span><span class="text-sm sm:text-base font-black block leading-tight">Bp. Yatiran<br>Bp. Kardiyo<br>Ibu Nurul<br>Ibu Sumiaton<br>Sdri. Maya</span></div>
+                <div class="box"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Seksi Kebersihan</span><span class="text-base sm:text-lg font-black block leading-tight">Bp. Dwiyani<br>Bp. Sutikno</span></div>
             </div>
 
             <div class="flex-box mt-4">
-                <div class="box" style="max-w: 540px; width: 100%;"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-wide">Seksi Remaja Musholla</span><span class="text-base sm:text-lg font-black block leading-relaxed">Sdr. Totok | Sdr. Bilqis<br>Sdr. Ibra | Sdr. Cilo<br>Sdr. Azam | Sdr. Vicky<br>Sdri. Wulan, Sdri. Yopi, Dkk</span></div>
+                <div class="box" style="max-width: 540px; width: 100%;"><span class="text-xl sm:text-2xl font-black block mb-1.5 uppercase tracking-tight">Seksi Remaja Musholla</span><span class="text-base sm:text-lg font-black block leading-tight">Sdr. Totok | Sdr. Bilqis<br>Sdr. Ibra | Sdr. Cilo<br>Sdr. Azam | Sdr. Vicky<br>Sdri. Wulan, Sdri. Yopi, Dkk</span></div>
             </div>
         </div>
     </div>
@@ -227,9 +230,9 @@
     <div class="p-4 md:p-6 lg:p-8 font-black">
         <div class="max-w-7xl mx-auto space-y-6">
             
-            <header class="bg-[#166534] text-white p-8 rounded-[1.5rem] shadow-lg text-center w-full">
-                <h1 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide">MUSHOLLA WAKAF AN-NUR</h1>
-                <p class="text-sm sm:text-base md:text-lg text-[#4ade80] font-black uppercase tracking-widest mt-2">LAPORAN INFAQ DIGITAL SYSTEM</p>
+            <header class="bg-[#14532d] text-white p-8 rounded-[1.5rem] shadow-lg text-center w-full">
+                <h1 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight">MUSHOLLA WAKAF AN-NUR</h1>
+                <p class="text-sm sm:text-base md:text-lg text-[#22c55e] font-black uppercase tracking-wider mt-2">LAPORAN INFAQ DIGITAL SYSTEM</p>
             </header>
 
             <div class="gradient-blue p-10 sm:p-12 rounded-[2.5rem] text-white text-center shadow-2xl w-full">
@@ -237,56 +240,53 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="wifi-icon icon-blink">
                         <path fill-rule="evenodd" d="M.676 6.941A12.964 12.964 0 0 1 10 3c3.657 0 6.963 1.511 9.324 3.941a.75.75 0 0 1-.008 1.053l-.353.354a.75.75 0 0 1-1.069-.008C15.894 6.28 13.097 5 10 5 6.903 5 4.106 6.28 2.106 8.34a.75.75 0 0 1-1.069.008l-.353-.354a.75.75 0 0 1-.008-1.053Zm2.825 2.833A8.976 8.976 0 0 1 10 7a8.976 8.976 0 0 1 6.499 2.774.75.75 0 0 1-.011 1.049l-.354.354a.75.75 0 0 1-1.072-.012A6.978 6.978 0 0 0 10 9c-1.99 0-3.786.83-5.061 2.165a.75.75 0 0 1-1.073.012l-.354-.354a.75.75 0 0 1-.01-1.05Zm2.82 2.84A4.989 4.989 0 0 1 10 11c1.456 0 2.767.623 3.68 1.614a.75.75 0 0 1-.022 1.039l-.354.354a.75.75 0 0 1-1.085-.026A2.99 2.99 0 0 0 10 13c-.88 0-1.67.377-2.22.981a.75.75 0 0 1-1.084.026l-.354-.354a.75.75 0 0 1-.021-1.039Zm3.179 3.178a.75.75 0 1 1 1.06 1.06.75.75 0 0 1-1.06-1.06Z" clip-rule="evenodd"/>
                     </svg>
-                    <span class="wifi-text text-base sm:text-lg">SYSTEM ONLINE</span>
+                    <span class="wifi-text">SYSTEM ONLINE</span>
                 </div>
                 <div>
-                    <p class="text-sm sm:text-base font-black uppercase tracking-widest opacity-90">Saldo Infaq Saat Ini</p>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mt-2" id="totalBalance">Memuat...</h2>
+                    <p class="text-sm sm:text-base font-black uppercase tracking-wider opacity-90">Saldo Infaq Saat Ini</p>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mt-2" id="totalBalance">Rp 0</h2>
                 </div>
             </div>
 
             <div class="w-full pt-2 pb-1">
-                <button onclick="bukaModalPin('input')" class="w-full bg-[#10b981] hover:bg-[#0dd391] text-white py-4 sm:py-5 rounded-2xl shadow-xl transition-all duration-300 font-black tracking-widest text-base sm:text-lg uppercase inline-flex items-center justify-center gap-2 border-2 border-emerald-400">
+                <button onclick="bukaModalPin('input')" class="w-full bg-[#059669] hover:bg-[#047857] text-white py-4 sm:py-5 rounded-2xl shadow-xl transition-all duration-300 font-black tracking-wider text-base sm:text-lg uppercase inline-flex items-center justify-center gap-2 border-2 border-emerald-400">
                     INPUT DATA
                 </button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                <div class="bg-white p-8 sm:p-10 rounded-[2rem] border-l-[14px] border-[#10b981] shadow-custom">
+                <div class="bg-white p-8 sm:p-10 rounded-[2rem] border-l-[14px] border-[#059669] shadow-custom">
                     <p class="text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider">Total Pemasukan</p>
-                    <p class="text-3xl sm:text-4xl font-black text-[#10b981] mt-1.5" id="totalIncome">Rp 0</p>
+                    <p class="text-3xl sm:text-4xl font-black text-[#059669] tracking-tight mt-1.5" id="totalIncome">Rp 0</p>
                 </div>
-                <div class="bg-white p-8 sm:p-10 rounded-[2rem] border-l-[14px] border-[#ef4444] shadow-custom">
+                <div class="bg-white p-8 sm:p-10 rounded-[2rem] border-l-[14px] border-[#dc2626] shadow-custom">
                     <p class="text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider">Total Pengeluaran</p>
-                    <p class="text-3xl sm:text-4xl font-black text-[#ef4444] mt-1.5" id="totalExpense">Rp 0</p>
+                    <p class="text-3xl sm:text-4xl font-black text-[#dc2626] tracking-tight mt-1.5" id="totalExpense">Rp 0</p>
                 </div>
             </div>
 
             <div class="bg-white p-5 sm:p-8 md:p-12 rounded-[2.5rem] shadow-custom w-full">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
-                    <h3 class="mutasi-title text-[#166534] uppercase tracking-wide font-black text-xl sm:text-2xl md:text-3xl">Laporan Mutasi Infaq</h3>
-                    <span id="cloudStatus" class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full border border-amber-300 uppercase tracking-wide font-black animate-pulse">Menghubungkan ke Cloud...</span>
-                </div>
+                <h3 class="mutasi-title text-[#14532d] mb-6 sm:mb-8 uppercase tracking-tight font-black text-xl sm:text-2xl md:text-3xl">Laporan Mutasi Infaq</h3>
                 
                 <div class="hidden md:block w-full overflow-x-auto">
                     <table class="w-full text-left table-fixed">
-                        <thead class="mutasi-head border-b-4 border-slate-200">
+                        <thead class="mutasi-head border-b-4 border-slate-300">
                             <tr>
-                                <th class="pb-5 w-[14%]">TANGGAL</th>
-                                <th class="pb-5 w-[42%]">KETERANGAN</th>
-                                <th class="pb-5 text-right w-[13%]">MASUK</th>
-                                <th class="pb-5 text-right w-[13%]">KELUAR</th>
-                                <th class="pb-5 text-right w-[13%]">SALDO</th>
-                                <th class="pb-5 text-center w-[5%]">OPSI</th>
+                                <th class="pb-5 w-[14%] tracking-tight">TANGGAL</th>
+                                <th class="pb-5 w-[42%] tracking-tight">KETERANGAN</th>
+                                <th class="pb-5 text-right w-[13%] tracking-tight">MASUK</th>
+                                <th class="pb-5 text-right w-[13%] tracking-tight">KELUAR</th>
+                                <th class="pb-5 text-right w-[13%] tracking-tight">SALDO</th>
+                                <th class="pb-5 text-center w-[5%] tracking-tight">OPSI</th>
                             </tr>
                         </thead>
                         <tbody id="transactionListDesktop" class="mutasi-body font-black text-lg md:text-xl">
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
 
                 <div class="block md:hidden space-y-4 font-black w-full" id="transactionListMobile">
-                    </div>
+                </div>
 
             </div>
         </div>
@@ -295,22 +295,22 @@
     <div id="modalPin" class="fixed inset-0 bg-black/70 backdrop-blur-md z-[20000] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-[2.5rem] max-w-md md:max-w-2xl w-full text-center border border-slate-200 shadow-2xl overflow-hidden pb-8 transition-all">
             
-            <div class="bg-white text-slate-800 py-6 sm:py-8 px-6 text-center w-full border-b-2 border-slate-100 mb-6">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-wide text-slate-800">OTORISASI TAKMIR</h3>
-                <p class="text-xs sm:text-sm text-slate-500 font-black uppercase tracking-wider mt-1.5">Masukan PIN 6 Digit Angka</p>
+            <div class="bg-white text-slate-900 py-6 sm:py-8 px-6 text-center w-full border-b-2 border-slate-100 mb-6">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-slate-900">OTORISASI TAKMIR</h3>
+                <p class="text-xs sm:text-sm text-slate-600 font-black uppercase tracking-wider mt-1.5">Masukan PIN 6 Digit Angka</p>
             </div>
             
             <div class="px-6 sm:px-16 space-y-5">
                 <div class="relative">
-                    <input type="password" id="inputPinKeamanan" maxlength="6" inputmode="numeric" pattern="[0-9]*" placeholder="••••••" class="w-full text-center border-2 border-slate-200 rounded-2xl px-4 py-4 font-black text-3xl tracking-[0.4em] text-slate-800 bg-slate-50 focus:border-blue-600 focus:outline-none transition-all">
-                    <p id="errorPinText" class="text-sm text-rose-600 font-black mt-2 hidden">PIN Salah! Akses Ditolak.</p>
+                    <input type="password" id="inputPinKeamanan" maxlength="6" inputmode="numeric" pattern="[0-9]*" placeholder="••••••" class="w-full text-center border-2 border-slate-300 rounded-2xl px-4 py-4 font-black text-3xl tracking-[0.4em] text-slate-900 bg-slate-50 focus:border-blue-700 focus:outline-none transition-all">
+                    <p id="errorPinText" class="text-sm text-rose-700 font-black mt-2 hidden">PIN Salah! Akses Ditolak.</p>
                 </div>
                 
                 <div class="flex gap-4 pt-2 border-t border-slate-100">
-                    <button onclick="tutupModalPin()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition-all">
+                    <button onclick="tutupModalPin()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-4 rounded-xl font-black text-sm uppercase tracking-wider transition-all">
                         Batal
                     </button>
-                    <button onclick="validasiPinOtorizations()" class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-md transition-all">
+                    <button onclick="validasiPinOtorizations()" class="w-1/2 bg-blue-700 hover:bg-blue-800 text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-md transition-all">
                         Konfirmasi
                     </button>
                 </div>
@@ -319,46 +319,46 @@
     </div>
 
     <div id="modalTransaksi" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[10000] hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-[2.5rem] max-w-md md:max-w-2xl w-full text-slate-700 text-base overflow-hidden shadow-2xl relative border border-slate-100 pb-6 md:pb-8 transition-all">
+        <div class="bg-white rounded-[2.5rem] max-w-md md:max-w-2xl w-full text-slate-800 text-base overflow-hidden shadow-2xl relative border border-slate-200 pb-6 md:pb-8 transition-all">
             
-            <div class="bg-[#166534] text-white py-6 px-6 md:px-8 text-center w-full border-b-2 border-emerald-700 mb-6">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-wide">INPUT DATA</h3>
-                <p class="text-xs sm:text-sm text-[#4ade80] font-black uppercase tracking-wider mt-1.5">Laporan Infaq Digital System</p>
+            <div class="bg-[#14532d] text-white py-6 px-6 md:px-8 text-center w-full border-b-2 border-emerald-800 mb-6">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">INPUT DATA</h3>
+                <p class="text-xs sm:text-sm text-[#22c55e] font-black uppercase tracking-wider mt-1.5">Laporan Infaq Digital System</p>
             </div>
             
             <form id="formInputTransaksi" onsubmit="kirimDataKeGoogleSheets(event)" class="px-6 md:px-8 space-y-5">
                 
                 <div class="space-y-1.5">
-                    <label class="block font-black text-xs sm:text-sm text-slate-500 uppercase tracking-wider">Tanggal Input Data</label>
-                    <input type="date" id="inputTanggal" required class="w-full border-2 border-slate-200 rounded-xl px-4 py-3.5 font-black text-slate-800 bg-slate-50 focus:border-[#166534] focus:outline-none transition-all">
+                    <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Tanggal Input Data</label>
+                    <input type="date" id="inputTanggal" required class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
 
                 <div class="space-y-1.5">
-                    <label class="block font-black text-xs sm:text-sm text-slate-500 uppercase tracking-wider">Keterangan Input Data</label>
-                    <input type="text" id="inputKeterangan" required placeholder="Contoh : INPUT DATA" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3.5 font-black text-slate-800 placeholder-slate-400 bg-slate-50 focus:border-[#166534] focus:outline-none transition-all">
+                    <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Keterangan Input Data</label>
+                    <input type="text" id="inputKeterangan" required placeholder="Contoh : INPUT DATA" class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 placeholder-slate-400 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-1.5">
-                        <label class="block font-black text-xs sm:text-sm text-slate-500 uppercase tracking-wider">Nominal Masuk (Rp)</label>
-                        <input type="number" id="inputMasuk" min="0" value="0" required class="w-full border-2 border-slate-200 rounded-xl px-4 py-3.5 font-black text-slate-800 bg-slate-50 focus:border-[#166534] focus:outline-none transition-all">
+                        <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Nominal Masuk (Rp)</label>
+                        <input type="number" id="inputMasuk" min="0" value="0" required class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                     </div>
                     <div class="space-y-1.5">
-                        <label class="block font-black text-xs sm:text-sm text-slate-500 uppercase tracking-wider">Nominal Keluar (Rp)</label>
-                        <input type="number" id="inputKeluar" min="0" value="0" required class="w-full border-2 border-slate-200 rounded-xl px-4 py-3.5 font-black text-slate-800 bg-slate-50 focus:border-[#166534] focus:outline-none transition-all">
+                        <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Nominal Keluar (Rp)</label>
+                        <input type="number" id="inputKeluar" min="0" value="0" required class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                     </div>
                 </div>
 
                 <div class="space-y-1.5">
-                    <label class="block font-black text-xs sm:text-sm text-slate-500 uppercase tracking-wider">Link URL Foto Nota (Opsional)</label>
-                    <input type="url" id="inputNota" placeholder="https://drive.google.com/..." class="w-full border-2 border-slate-200 rounded-xl px-4 py-3.5 font-black text-slate-800 placeholder-slate-400 bg-slate-50 focus:border-[#166534] focus:outline-none transition-all">
+                    <label class="block font-black text-xs sm:text-sm text-slate-600 uppercase tracking-wider">Link URL Foto Nota (Opsional)</label>
+                    <input type="url" id="inputNota" placeholder="https://drive.google.com/..." class="w-full border-2 border-slate-300 rounded-xl px-4 py-3.5 font-black text-slate-900 placeholder-slate-400 bg-slate-50 focus:border-[#14532d] focus:outline-none transition-all">
                 </div>
 
-                <div class="flex items-center justify-end gap-4 pt-5 border-t border-slate-100">
-                    <button type="button" onclick="tutupModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-6 py-3.5 rounded-xl font-black transition-all tracking-wide text-sm uppercase">
+                <div class="flex items-center justify-end gap-4 pt-5 border-t border-slate-200">
+                    <button type="button" onclick="tutupModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-6 py-3.5 rounded-xl font-black transition-all tracking-wider text-sm uppercase">
                         Batal
                     </button>
-                    <button type="submit" id="btnSimpan" class="bg-[#166534] hover:bg-[#0f4623] text-white px-6 py-3.5 rounded-xl font-black transition-all shadow-md tracking-wide text-sm uppercase flex items-center gap-2">
+                    <button type="submit" id="btnSimpan" class="bg-[#14532d] hover:bg-[#166534] text-white px-6 py-3.5 rounded-xl font-black transition-all shadow-md tracking-wider text-sm uppercase flex items-center gap-2">
                         <span id="textSimpan">Simpan Data</span>
                     </button>
                 </div>
@@ -367,7 +367,7 @@
     </div>
 
     <div class="text-center py-12">
-        <p class="text-sm font-black text-slate-500 tracking-[0.3em] uppercase">
+        <p class="text-sm font-black text-slate-600 tracking-[0.3em] uppercase">
             Powered By : MBS ID
         </p>
     </div>
@@ -375,53 +375,35 @@
     <div id="snow-container" aria-hidden="true"></div>
 
     <script>
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8TMUzd3fCC3jULPu1is6n2FSPsKJ52q3cV1plQWDuq4CbOiBh_68KGHa5lO3au5Bm/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyeHCeVz3auAY7aa8rHtzdvQIoo1hAEuQy-oqzLMeL8shlSu6bR-hoskSYeS8HO7dj5/exec";
 
-        // Array penampung database dinamis cloud spreadsheet
-        let mutasiData = [];
+        const mutasiData = [
+            { tgl: "23/10/2025", ket: "SALDO INFAQ AWAL", masuk: 1000000, keluar: 0, nota: "" },
+            { tgl: "23/11/2025", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
+            { tgl: "23/11/2025", ket: "PEMBELIAN PASIR", masuk: 0, keluar: 400000, nota: "https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" },
+            { tgl: "23/11/2025", ket: "KONSUMSI MAKAN SIANG", masuk: 0, keluar: 90000, nota: "https://drive.google.com/file/d/1d_x_Zu0nICw6Pc0PkyLxK3Dl4NLhrDiQ/view?usp=sharing" },
+            { tgl: "13/01/2026", ket: "HAMBA ALLAH", masuk: 150000, keluar: 0, nota: "" },
+            { tgl: "23/01/2026", ket: "KERAMIK 5 DUS", masuk: 0, keluar: 360000, nota: "https://drive.google.com/file/d/1h23tajt7RTAWBHW6duHjK178CdNHNF-b/view?usp=sharing" },
+            { tgl: "26/01/2026", ket: "SEMEN GRESIK", masuk: 0, keluar: 58000, nota: "https://drive.google.com/file/d/16S825nMMjCsclSQOFvWMOvUYvmGqtJ59/view?drive_link" },
+            { tgl: "26/01/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
+            { tgl: "15/02/2026", ket: "CAT & PERLENGKAPAN LAINNYA", masuk: 0, keluar: 159000, nota: "https://drive.google.com/file/d/124K1C2jaVXzmRqrW77vcWlU74GqkWbP2/view?usp=sharing" },
+            { tgl: "17/02/2026", ket: "CATALAN BANNER SELAMAT MENUNAIKAN IBADAH PUASA", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ/view?usp=sharing" },
+            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN IBU IBU", masuk: 65000, keluar: 0, nota: "" },
+            { tgl: "17/02/2026", ket: "INFAQ MEGENGAN BAPAK BAPAK", masuk: 20000, keluar: 0, nota: "" },
+            { tgl: "06/03/2026", ket: "DANA SUMBANGAN OLEH TAKMIR", masuk: 534000, keluar: 0, nota: "" },
+            { tgl: "06/03/2026", ket: "KONSUMSI TAKJIL DLL", masuk: 0, keluar: 494000, nota: "https://drive.google.com/file/d/1xraqs1gkwaaV_TgA3lSH9UbcEQsQ2AoR/view?usp=drive_link" },
+            { tgl: "17/03/2026", ket: "CETAK BANNER SELAMAT HARI RAYA IDUL FITRI", masuk: 0, keluar: 89800, nota: "https://drive.google.com/file/d/1BGrYV-76j-EdCn7-aZq6ytaaKxCck3iJ9/view?usp=sharing" },
+            { tgl: "11/05/2026", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
+            { tgl: "12/05/2026", ket: "DANA KOTAK INFAQ", masuk: 250000, keluar: 0, nota: "" },
+            { tgl: "13/05/2026", ket: "KONSUMSI, KRESEK & FOTOCOPY UNDANGAN.", masuk: 0, keluar: 250000, nota: "https://drive.google.com/file/d/1s38Z6uBdeYT1Gk525AMSq9C2hVomMylK/view?usp=sharing" },
+            { tgl: "13/05/2026", ket: "INFAQ ISTIGHOSAH BAPAK² & IBU²", masuk: 185000, keluar: 0, nota: "https://drive.google.com/file/d/118QmwCoEI9WemnqGMt6HmFQjiDOjEajw/view?usp=sharing" }
+        ];
 
         let modeAksiGlobal = "";
         let indexHapusGlobal = null;
 
         function formatRupiah(num) {
             return num === 0 ? "-" : "Rp " + num.toLocaleString("id-ID");
-        }
-
-        // FUNGSI AUTO-LOAD DATA PERTAMA KALI SAAT HALAMAN DIBUKA (PENCEGAH DATA HILANG DI VERCEL)
-        function muatDataDariSpreadsheet() {
-            const statusBadge = document.getElementById("cloudStatus");
-            
-            fetch(GOOGLE_SCRIPT_URL, { method: "GET" })
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.length > 0) {
-                    // Mapping data dari Spreadsheet cloud ke format aplikasi lokal
-                    mutasiData = data.map(row => ({
-                        tgl: row.tanggal || "",
-                        ket: (row.keterangan || "").toUpperCase(),
-                        masuk: parseInt(row.masuk) || 0,
-                        keluar: parseInt(row.keluar) || 0,
-                        nota: row.nota || ""
-                    }));
-                }
-                statusBadge.innerText = "ONLINE - SINKRON";
-                statusBadge.className = "bg-emerald-100 text-emerald-800 text-xs px-3 py-1.5 rounded-full border border-emerald-300 uppercase tracking-wide font-black";
-                renderMutasi();
-            })
-            .catch(error => {
-                console.error("Gagal sinkronisasi data:", error);
-                statusBadge.innerText = "Koneksi Offline Cloud";
-                statusBadge.className = "bg-rose-100 text-rose-800 text-xs px-3 py-1.5 rounded-full border border-rose-300 uppercase tracking-wide font-black";
-                
-                // Backup data cadangan statis jika koneksi Google sheets bermasalah/interupsi
-                mutasiData = [
-                    { tgl: "23/10/2025", ket: "SALDO INFAQ AWAL", masuk: 1000000, keluar: 0, nota: "" },
-                    { tgl: "23/11/2025", ket: "HAMBA ALLAH", masuk: 50000, keluar: 0, nota: "" },
-                    { tgl: "23/11/2025", ket: "PEMBELIAN PASIR", masuk: 0, keluar: 400000, nota: "https://drive.google.com/file/d/1IthM9w13mRrSvpL3dKETfu5ITlqKcmFJ/view?usp=drive_link" },
-                    { tgl: "13/05/2026", ket: "INFAQ ISTIGHOSAH BAPAK² & IBU²", masuk: 185000, keluar: 0, nota: "https://drive.google.com/file/d/118QmwCoEI9WemnqGMt6HmFQjiDOjEajw/view?usp=sharing" }
-                ];
-                renderMutasi();
-            });
         }
 
         function bukaModalPin(mode, index = null) {
@@ -510,7 +492,6 @@
                 const tglSplit = dataForm.tanggal.split("-");
                 const tglFormatted = `${tglSplit[2]}/${tglSplit[1]}/${tglSplit[0]}`;
 
-                // Push permanen ke database lokal agar data langsung bertambah tanpa hilang
                 mutasiData.push({
                     tgl: tglFormatted,
                     ket: dataForm.keterangan.toUpperCase(),
@@ -553,19 +534,19 @@
 
                 // 1. Desktop Render
                 const tr = document.createElement("tr");
-                tr.className = "border-b border-slate-100 last:border-0 font-black";
+                tr.className = "border-b border-slate-200 last:border-0 font-black";
                 tr.innerHTML = `
-                    <td class="mutasi-date py-5 font-black">${item.tgl}</td>
-                    <td class="py-5 pr-4">
+                    <td class="mutasi-date py-4 font-black">${item.tgl}</td>
+                    <td class="py-4 pr-4">
                         <div class="mutasi-ket font-black flex flex-col justify-start items-start w-full">
                             <span>${item.ket}</span>
                             ${notaLink}
                         </div>
                     </td>
-                    <td class="text-right mutasi-masuk py-5 font-black">${formatRupiah(item.masuk)}</td>
-                    <td class="text-right mutasi-keluar py-5 font-black">${formatRupiah(item.keluar)}</td>
-                    <td class="text-right saldo-col py-5 font-black">${formatRupiah(runningBalance)}</td>
-                    <td class="text-center py-5">
+                    <td class="text-right mutasi-masuk py-4 font-black">${formatRupiah(item.masuk)}</td>
+                    <td class="text-right mutasi-keluar py-4 font-black">${formatRupiah(item.keluar)}</td>
+                    <td class="text-right saldo-col py-4 font-black">${formatRupiah(runningBalance)}</td>
+                    <td class="text-center py-4">
                         <button onclick="hapusTransaksi(${index})" class="text-rose-600 hover:text-rose-900 bg-rose-50 hover:bg-rose-100 p-1.5 rounded-lg transition-all inline-flex items-center justify-center border border-rose-200">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-2.5 h-2.5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.34 9m-4.78 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
@@ -577,7 +558,7 @@
 
                 // 2. Mobile Render
                 const card = document.createElement("div");
-                card.className = "p-5 rounded-2xl border-2 border-slate-200 shadow-sm space-y-3 bg-slate-50 font-black w-full";
+                card.className = "p-5 rounded-2xl border-2 border-slate-300 shadow-sm space-y-3 bg-slate-50 font-black w-full";
                 
                 let jenisBadge = "";
                 if (item.masuk > 0) jenisBadge = `<span class="bg-emerald-200 text-emerald-900 text-xs px-2.5 py-1 rounded-full font-black border border-emerald-400">MASUK</span>`;
@@ -585,26 +566,26 @@
 
                 card.innerHTML = `
                     <div class="flex justify-between items-center font-black">
-                        <span class="text-sm font-black text-slate-500">${item.tgl}</span>
+                        <span class="text-sm font-black text-slate-600">${item.tgl}</span>
                         ${jenisBadge}
                     </div>
-                    <div class="font-black text-slate-900 text-base leading-tight tracking-wide flex flex-col justify-start items-start w-full">
+                    <div class="font-black text-slate-900 text-base leading-tight tracking-tight flex flex-col justify-start items-start w-full">
                         <span>${item.ket}</span>
                         ${notaLink}
                     </div>
                     <div class="grid grid-cols-3 gap-2 pt-2.5 border-t border-slate-300 text-sm font-black items-center">
                         <div>
-                            <p class="text-slate-500 font-black">NOMINAL</p>
-                            <p class="${item.masuk > 0 ? 'text-emerald-600' : 'text-rose-600'} font-black text-base mt-0.5">
+                            <p class="text-slate-500 font-black text-[11px]">NOMINAL</p>
+                            <p class="${item.masuk > 0 ? 'text-emerald-700' : 'text-rose-700'} font-black text-base mt-0.5 tracking-tight">
                                 ${item.masuk > 0 ? formatRupiah(item.masuk) : formatRupiah(item.keluar)}
                             </p>
                         </div>
                         <div class="text-center">
-                            <p class="text-slate-500 font-black">SISA SALDO</p>
-                            <p class="text-blue-800 font-black text-base mt-0.5">${formatRupiah(runningBalance)}</p>
+                            <p class="text-slate-500 font-black text-[11px]">SISA SALDO</p>
+                            <p class="text-blue-800 font-black text-base mt-0.5 tracking-tight">${formatRupiah(runningBalance)}</p>
                         </div>
                         <div class="text-right flex flex-col items-center justify-center">
-                            <p class="text-slate-500 font-black mb-1 text-center w-full">OPSI</p>
+                            <p class="text-slate-500 font-black mb-1 text-center w-full text-[11px]">OPSI</p>
                             <button onclick="hapusTransaksi(${index})" class="w-10 text-center text-rose-700 bg-rose-100 border border-rose-300 py-1.5 rounded-lg font-black transition-all active:scale-95 flex items-center justify-center mx-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-2.5 h-2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.34 9m-4.78 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
@@ -621,8 +602,7 @@
             document.getElementById("totalBalance").innerText = "Rp " + (totalIncome - totalExpense).toLocaleString("id-ID");
         }
 
-        // Panggil fungsi muat data otomatis dari spreadsheet saat aplikasi pertama kali terbuka di Vercel
-        window.addEventListener("DOMContentLoaded", muatDataDariSpreadsheet);
+        renderMutasi();
 
         function createSnowflake() {
             const snowflakeChars = ['❄', '❅', '❆', '✻', '✽'];
