@@ -414,13 +414,12 @@
                 const baseBgRow = index % 2 === 0 ? 'bg-white' : 'bg-slate-50/70';
                 const rowContainer = document.createElement("div");
                 
-                // Set padding vertical dikurangi (py-1.5 md:py-2) dan leading-tight agar jarak baris rapat
                 rowContainer.className = `flex flex-col md:grid md:grid-cols-12 md:items-center p-3 py-1.5 md:py-2 md:px-2 border border-slate-200 md:border-b md:border-x-0 md:border-t-0 rounded-xl md:rounded-none shadow-sm md:shadow-none hover:bg-emerald-50/40 transition gap-1 md:gap-0 ${baseBgRow} w-full`;
                 
                 let notaHtml = "";
                 if (item.nota && item.nota.trim() !== "") {
-                    // Nota ditaruh di baris kedua (block) dengan jarak margin top tipis (mt-0.5)
-                    notaHtml = `<div class="block w-full mt-0.5"><a href="${item.nota}" target="_blank" class="text-[10px] md:text-[11px] text-blue-600 hover:underline inline-block tracking-wide bg-blue-50 md:bg-transparent px-2 py-0.5 md:p-0 rounded border border-blue-200 md:border-0">Lihat Foto Nota</a></div>`;
+                    // ml-[72px] di mobile agar tulisan Nota bergeser lurus ke kanan sejajar dengan teks keterangan (melewati kata "Keterangan:")
+                    notaHtml = `<div class="block w-full mt-0.5 ml-[72px] md:ml-0"><a href="${item.nota}" target="_blank" class="text-[10px] md:text-[11px] text-blue-600 hover:underline inline-block tracking-wide bg-blue-50 md:bg-transparent px-2 py-0.5 md:p-0 rounded border border-blue-200 md:border-0">Lihat Foto Nota</a></div>`;
                 }
                 
                 rowContainer.innerHTML = `
@@ -432,8 +431,8 @@
                         </button>
                     </div>
                     <div class="md:col-span-4 text-slate-700 uppercase leading-tight text-xs md:text-sm flex flex-col items-start justify-center md:px-4 min-w-0">
-                        <div class="flex items-center w-full justify-between md:justify-start">
-                            <span class="md:hidden text-slate-400 uppercase text-[9px] mr-2">Keterangan:</span>
+                        <div class="flex items-start w-full justify-between md:justify-start">
+                            <span class="md:hidden text-slate-400 uppercase text-[9px] mr-2 block shrink-0 pt-[1px]">Keterangan:</span>
                             <span class="flex-1 md:flex-none text-left break-all">${item.keterangan}</span>
                         </div>
                         ${notaHtml}
