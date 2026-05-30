@@ -277,7 +277,7 @@
         <!-- Tombol Input -->
         <button onclick="requestAccess('add')" class="w-full bg-[#10b981] hover:bg-[#059669] text-white py-3.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-sm tracking-wide text-xs md:text-sm uppercase">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-100" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 00-1 1z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 010-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
             </svg>
             Input Data Baru
         </button>
@@ -286,7 +286,7 @@
         <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-6 shadow-sm overflow-hidden">
             <div class="flex justify-between items-center mb-4 w-full">
                 <h2 class="text-emerald-800 text-xs md:text-base tracking-wide uppercase border-b-2 border-[#115e3b] pb-0.5 font-black">LAPORAN MUTASI INFAQ</h2>
-                <span id="loading-status" class="text-[9px] md:text-xs text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">Sinkron...</span>
+                <span id="loading-status" class="text-[9px] md:text-xs text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">Memuat...</span>
             </div>
             
             <div class="hidden md:grid grid-cols-12 text-xs text-slate-700 uppercase border-b border-slate-200 pb-2 mb-2 tracking-wider bg-slate-100 p-2 rounded-lg text-center w-full">
@@ -367,7 +367,7 @@
     </div>
 
     <script>
-        // ✅ URL SUDAH DIISI SESUAI MILIK KAMU
+        // ✅ URL SUDAH DISET KE MILIK ANDA
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw9YQ5Z6uEgZnFVh1knf_7xFMMSKPvJmXLTnRD23B1_TKPe8xSVFeRztbrshRN82ybHTw/exec";
 
         let currentDatabase = [];
@@ -426,19 +426,19 @@
                 const payload = {
                     action: "DELETE",
                     pin: pin,
-                    rowIndex: currentAccessSession.index,
-                    ...currentDatabase[currentAccessSession.index]
+                    rowIndex: currentAccessSession.index
                 };
                 try {
                     const res = await fetch(WEB_APP_URL, {
                         method: "POST",
+                        redirect: "follow",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(payload)
                     });
                     const hasil = await res.json();
+                    alert(hasil.pesan);
                     if(hasil.status === "berhasil") fetchLiveKasData();
-                    else alert(hasil.pesan);
-                } catch(e) { alert("Gagal menghubungi server!"); }
+                } catch(e) { alert("❌ Gagal menghubungi server!"); }
             }
         }
 
@@ -524,20 +524,21 @@
             status.textContent = "Sinkronisasi...";
             status.className = "text-[10px] text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full animate-pulse border border-amber-200";
             try {
-                const res = await fetch(`${WEB_APP_URL}?_=${Date.now()}`);
+                const res = await fetch(`${WEB_APP_URL}?_=${Date.now()}`, { redirect: "follow", cache: "no-store" });
                 currentDatabase = await res.json();
                 renderData(currentDatabase);
-                status.textContent = "Terupdate";
+                status.textContent = "✅ Terupdate";
                 status.className = "text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200";
             } catch (err) {
                 console.error(err);
-                status.textContent = "Offline";
+                status.textContent = "❌ Offline";
                 status.className = "text-[10px] text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200";
             }
         }
 
         async function handleFormSubmit(e) {
             e.preventDefault();
+            closeModal();
             const pin = document.getElementById("input-security-pin").value;
             const payload = {
                 action: "CREATE",
@@ -548,17 +549,17 @@
                 keluar: parseInt(document.getElementById("form-keluar").value) || 0,
                 nota: document.getElementById("form-nota").value
             };
-            closeModal();
             try {
                 const res = await fetch(WEB_APP_URL, {
                     method: "POST",
+                    redirect: "follow",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
                 });
                 const hasil = await res.json();
                 alert(hasil.pesan);
                 fetchLiveKasData();
-            } catch(e) { alert("Gagal menyimpan!"); }
+            } catch(e) { alert("❌ Gagal menyimpan! Cek koneksi/PIN."); }
         }
 
         window.addEventListener("DOMContentLoaded", fetchLiveKasData);
